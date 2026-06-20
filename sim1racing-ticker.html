@@ -1,0 +1,65 @@
+<!-- SIM1Racing Scrolling Ticker -->
+<div style="
+    background: #EF4444;
+    padding: 30px 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+">
+    <div id="ticker-content" style="
+        display: flex;
+        animation: scroll-ticker 12s linear infinite;
+        white-space: nowrap;
+    ">
+        <!-- First Set -->
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">20 MOTION SIMULATORS</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">8,000 SQUARE FEET</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">OPEN EVERYDAY 11AM-11PM</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">WALK-INS WELCOME</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">PRIVATE EVENTS</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">PARAMUS, NJ</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+
+        <!-- Duplicate Set for Seamless Loop -->
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">20 MOTION SIMULATORS</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">8,000 SQUARE FEET</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">OPEN EVERYDAY 11AM-11PM</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">WALK-INS WELCOME</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">PRIVATE EVENTS</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+        <span style="font-size: 1.5em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; padding: 0 30px; display: inline-block; font-family: 'Barlow Condensed', sans-serif; color: white;">PARAMUS, NJ</span>
+        <span style="color: white; padding: 0 10px; font-size: 1.5em;">•</span>
+    </div>
+</div>
+
+<style>
+@keyframes scroll-ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-ticker-mobile {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    #ticker-content {
+        animation: scroll-ticker-mobile 6s linear infinite !important;
+    }
+    #ticker-content span {
+        font-size: 0.9em !important;
+        padding: 0 15px !important;
+        letter-spacing: 1px !important;
+    }
+}
+</style>
