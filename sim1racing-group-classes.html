@@ -1,0 +1,475 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ═══════════════════════════════════════
+   GROUP CLASSES INTRO SECTION
+═══════════════════════════════════════ */
+.gc-section {
+  font-family: 'Nunito Sans', sans-serif;
+  background: transparent;
+  padding: 60px 40px 52px;
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.gc-section * { box-sizing: border-box; }
+.gc-eyebrow {
+  display: inline-block;
+  background: #EF4444;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+.gc-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 3em;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 18px;
+  line-height: 1.05;
+}
+.gc-subtitle {
+  font-size: 0.97em;
+  color: #c0c0c0;
+  line-height: 1.65;
+  max-width: 1100px;
+  margin: 0 auto 36px;
+  font-weight: 400;
+}
+.gc-stats {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  margin-bottom: 52px;
+}
+.gc-stat {
+  padding: 22px 16px;
+  border-right: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gc-stat:last-child { border-right: none; }
+.gc-stat-num {
+  font-family: 'Manrope', sans-serif;
+  font-size: 2.4em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gc-stat-label {
+  font-size: 0.78em;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gc-hiw-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.gc-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gc-step {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 30px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border-color 0.2s;
+}
+.gc-step:hover { border-color: #EF4444; }
+.gc-step-num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #EF4444;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.4em;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.gc-step-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.gc-step-desc {
+  font-size: 0.83em;
+  color: #b0b0b0;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Current Classes label */
+.gc-current-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  color: #fff;
+  margin: 52px 0 12px;
+  text-align: center;
+}
+
+/* Optional practice note */
+.gc-practice-note {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-left: 3px solid #EF4444;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 22px;
+  font-size: 0.88em;
+  color: #888;
+  line-height: 1.6;
+  margin: 32px 0;
+  text-align: left;
+}
+.gc-practice-note strong { color: #ccc; }
+
+/* Coming Soon section */
+.gc-coming-soon {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.gc-coming-soon-eyebrow {
+  display: inline-block;
+  background: #2a2a2a;
+  color: #888;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+.gc-coming-soon-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 16px;
+  line-height: 1.05;
+}
+.gc-coming-soon-body {
+  font-size: 0.97em;
+  color: #c0c0c0;
+  line-height: 1.65;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* ═══════════════════════════════════════
+   CLASS CARDS
+═══════════════════════════════════════ */
+.sim1-class-card {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #2a2a2a;
+  max-width: 1600px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr 380px;
+  gap: 0;
+  min-height: 220px;
+}
+.sim1-class-card * { font-family: 'Nunito Sans', sans-serif; }
+.sim1-class-card h1, .sim1-class-card h2, .sim1-class-card h3 { font-family: 'Manrope', sans-serif; }
+.sim1-class-image { width: 100%; height: 100%; object-fit: cover; background: #2a2a2a; display: block; }
+.sim1-class-content { padding: 22px 25px; display: flex; flex-direction: column; justify-content: space-between; }
+.sim1-class-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.sim1-class-badge { background: #EF4444; color: white; padding: 5px 14px; border-radius: 14px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.sim1-class-title { font-size: 2em; font-weight: 800; color: white; line-height: 1.1; text-transform: uppercase; font-family: 'Manrope', sans-serif; margin: 0; }
+.sim1-class-description { color: #d0d0d0; line-height: 1.5; margin-bottom: 12px; font-size: 0.88em; }
+.sim1-class-details { background: #0f0f0f; padding: 12px 16px; border-radius: 6px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.sim1-detail-item { display: flex; flex-direction: column; gap: 4px; }
+.sim1-detail-label { color: #888; font-weight: 600; font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.5px; }
+.sim1-detail-value { color: #fff; font-weight: bold; font-size: 0.82em; line-height: 1.3; }
+.sim1-price-section { padding: 22px 25px; background: linear-gradient(135deg, #1a0000 0%, #EF4444 100%); display: flex; flex-direction: column; justify-content: space-between; }
+.sim1-price-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.sim1-price-title { font-size: 0.9em; font-weight: bold; color: white; }
+.sim1-price-main { font-size: 2.4em; font-weight: 800; line-height: 1; color: white; font-family: 'Manrope', sans-serif; }
+.sim1-price-description { font-size: 0.76em; color: #e0e0e0; margin-bottom: 10px; line-height: 1.3; }
+.sim1-add-ons { margin-bottom: 12px; }
+.sim1-add-on-title { font-size: 0.76em; font-weight: bold; margin-bottom: 6px; color: white; }
+.sim1-add-on-item { display: flex; justify-content: space-between; padding: 3px 0; font-size: 0.76em; color: white; line-height: 1.4; }
+.sim1-add-on-old { text-decoration: line-through; opacity: 0.6; font-weight: normal; margin-right: 6px; }
+.sim1-btn-primary { background: rgba(0,0,0,0.3); color: white; padding: 11px 20px; border: 2px solid white; border-radius: 6px; font-size: 0.9em; font-weight: bold; cursor: pointer; text-decoration: none; display: block; transition: all 0.3s; text-transform: uppercase; text-align: center; font-family: 'Manrope', sans-serif; letter-spacing: 1px; }
+.sim1-btn-primary:hover { background: white; color: #EF4444; transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════
+   TABLET BREAKPOINTS
+═══════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .sim1-class-card { grid-template-columns: 240px 1fr 340px; }
+}
+@media (max-width: 968px) {
+  .sim1-class-card { grid-template-columns: 1fr; min-height: auto; }
+  .sim1-class-image { height: auto; aspect-ratio: 280 / 230; object-fit: cover; }
+  .sim1-class-details { grid-template-columns: repeat(2, 1fr); }
+  .sim1-price-section { padding: 25px; }
+}
+@media (max-width: 768px) {
+  .gc-title { font-size: 2em; }
+  .gc-coming-soon-title { font-size: 1.5em; }
+  .sim1-class-content { padding: 20px; }
+  .sim1-class-title { font-size: 1.3em; }
+  .sim1-class-details { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════
+   MOBILE BREAKPOINT
+═══════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  .gc-section { padding: 40px 16px 40px; }
+
+  /* Stats 2x2 */
+  .gc-stats { grid-template-columns: repeat(2, 1fr) !important; grid-template-rows: repeat(2, 1fr); }
+  .gc-stat:nth-child(1), .gc-stat:nth-child(2) { border-bottom: 1px solid #2a2a2a; }
+  .gc-stat:nth-child(even) { border-right: none; }
+  .gc-stat:nth-child(odd) { border-right: 1px solid #2a2a2a; }
+  .gc-stat { padding: 14px 8px; }
+  .gc-stat-num { font-size: 1.4em !important; margin-bottom: 5px; white-space: nowrap; }
+  .gc-stat-label { font-size: 0.62em; letter-spacing: 0.3px; }
+
+  /* Steps carousel */
+  .gc-steps { display: flex !important; grid-template-columns: unset !important; gap: 0 !important; width: 300%; transition: transform 0.35s ease; user-select: none; -webkit-user-select: none; }
+  .gc-step { min-width: 33.333%; max-width: 33.333%; width: 33.333%; padding: 24px 20px 22px; border-radius: 12px; }
+  .gc-step-num { width: 44px; height: 44px; font-size: 1.2em; margin-bottom: 12px; }
+  .gc-step-name { font-size: 0.92em; margin-bottom: 8px; }
+  .gc-step-desc { font-size: 0.78em; }
+  .gc-steps-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+  .gc-steps-dot { width: 8px; height: 8px; border-radius: 50%; background: #333; border: none; padding: 0; cursor: pointer; transition: background 0.2s; }
+  .gc-steps-dot.active { background: #EF4444; }
+  .gc-steps-nav { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 14px; }
+  .gc-steps-nav-btn { background: #EF4444; color: white; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+  /* Current Classes — same size as How It Works on mobile */
+  .gc-hiw-title { font-size: 1.2em; }
+  .gc-current-label { margin: 36px 0 12px; font-size: 1.2em; }
+
+  .gc-practice-note { font-size: 0.82em; }
+  .gc-coming-soon { padding: 24px 0 10px; }
+  .gc-coming-soon-title { font-size: 1.3em; }
+  .gc-coming-soon-body { font-size: 0.88em; }
+}
+</style>
+
+<!-- ═══════════════════════════════════════
+     GROUP CLASSES INTRO
+═══════════════════════════════════════ -->
+<div class="gc-section">
+  <div class="gc-eyebrow">Now Booking</div>
+  <h2 class="gc-title">Group Classes</h2>
+  <p class="gc-subtitle">Learn the fundamentals of sim racing in a structured, supportive group environment. Our intro classes are perfect for beginners looking to build real skills, understand racing techniques, and progress from complete novice to a competitor in our Monthly Championship Races. No long-term commitment — book week to week, just $10 per class, and come as often as you like.</p>
+
+  <div class="gc-stats">
+    <div class="gc-stat"><div class="gc-stat-num">2+</div><div class="gc-stat-label">Class Types</div></div>
+    <div class="gc-stat"><div class="gc-stat-num">Weekly</div><div class="gc-stat-label">Drop-In Classes</div></div>
+    <div class="gc-stat"><div class="gc-stat-num">Beginner</div><div class="gc-stat-label">Friendly</div></div>
+    <div class="gc-stat"><div class="gc-stat-num">$10</div><div class="gc-stat-label">Per Class</div></div>
+  </div>
+
+  <div class="gc-hiw-title">How It Works</div>
+
+  <!-- Desktop steps -->
+  <div class="gc-steps-desktop" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+    <div class="gc-step"><div class="gc-step-num">1</div><div class="gc-step-name">Choose Your Class</div><div class="gc-step-desc">Select the class that fits your schedule and age group. Both our adult and kids classes are designed for complete beginners.</div></div>
+    <div class="gc-step"><div class="gc-step-num">2</div><div class="gc-step-name">Book Your Week</div><div class="gc-step-desc">Click "Book a Class" to pick the date you want to attend and reserve your spot for $10. No program commitment — just book again whenever you want to come back.</div></div>
+    <div class="gc-step"><div class="gc-step-num">3</div><div class="gc-step-name">Start Learning</div><div class="gc-step-desc">Attend class for 20 minutes of classroom instruction, plus optional simulator time with live feedback from the coach at 10% off.</div></div>
+  </div>
+
+  <!-- Mobile steps carousel -->
+  <div class="gc-steps-wrap" style="display:none; overflow:hidden;">
+    <div class="gc-steps" id="gc-steps-track">
+      <div class="gc-step"><div class="gc-step-num">1</div><div class="gc-step-name">Choose Your Class</div><div class="gc-step-desc">Select the class that fits your schedule and age group. Both our adult and kids classes are designed for complete beginners.</div></div>
+      <div class="gc-step"><div class="gc-step-num">2</div><div class="gc-step-name">Book Your Week</div><div class="gc-step-desc">Click "Book a Class" to pick the date you want to attend and reserve your spot for $10. No program commitment — just book again whenever you want to come back.</div></div>
+      <div class="gc-step"><div class="gc-step-num">3</div><div class="gc-step-name">Start Learning</div><div class="gc-step-desc">Attend class for 20 minutes of classroom instruction, plus optional simulator time with live feedback from the coach at 10% off.</div></div>
+    </div>
+    <div class="gc-steps-nav">
+      <button class="gc-steps-nav-btn" onclick="changeStep(-1)">‹</button>
+      <div class="gc-steps-dots">
+        <button class="gc-steps-dot active" onclick="goStep(0)"></button>
+        <button class="gc-steps-dot" onclick="goStep(1)"></button>
+        <button class="gc-steps-dot" onclick="goStep(2)"></button>
+      </div>
+      <button class="gc-steps-nav-btn" onclick="changeStep(1)">›</button>
+    </div>
+  </div>
+
+  <!-- Current Classes label -->
+  <div class="gc-current-label">Current Classes</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     KIDS CLASS CARD
+═══════════════════════════════════════ -->
+<div class="sim1-class-card">
+  <img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69efb788da7fce384f7a3d96/1777317769101/ad771da9-26f9-4d57-b27d-c3496634ac3d.jpg" alt="Kids Group Class" class="sim1-class-image">
+  <div class="sim1-class-content">
+    <div>
+      <div class="sim1-class-header">
+        <span class="sim1-class-badge">AGES 7-17</span>
+        <h3 class="sim1-class-title">DRIVING BASICS FOR YOUNG RACERS</h3>
+      </div>
+      <p class="sim1-class-description">Designed for young racers! Kids learn the fundamentals of racing in a fun, age-appropriate environment. Build confidence, hand-eye coordination, and real driving skills through structured instruction.</p>
+    </div>
+    <div class="sim1-class-details">
+      <div class="sim1-detail-item"><span class="sim1-detail-label">SCHEDULE</span><span class="sim1-detail-value">Mondays<br>5:00pm</span></div>
+      <div class="sim1-detail-item"><span class="sim1-detail-label">AGE GROUP</span><span class="sim1-detail-value">7-17 Years Old</span></div>
+      <div class="sim1-detail-item"><span class="sim1-detail-label">BOOKING</span><span class="sim1-detail-value">Week to Week<br>No Commitment</span></div>
+      <div class="sim1-detail-item"><span class="sim1-detail-label">FORMAT</span><span class="sim1-detail-value">20min Classroom<br>+ Optional Practice</span></div>
+    </div>
+  </div>
+  <div class="sim1-price-section">
+    <div>
+      <div class="sim1-price-header">
+        <div class="sim1-price-title">Per Class</div>
+        <div class="sim1-price-main">$10</div>
+      </div>
+      <div class="sim1-price-description">Book one week at a time | FREE for members</div>
+      <div class="sim1-add-ons">
+        <div class="sim1-add-on-title">Optional Practice (With Coach Feedback) — 10% Off:</div>
+        <div class="sim1-add-on-item"><span>20 min simulator</span><span style="font-weight:bold;"><span class="sim1-add-on-old">$25</span>+$22.50</span></div>
+        <div class="sim1-add-on-item"><span>40 min simulator</span><span style="font-weight:bold;"><span class="sim1-add-on-old">$45</span>+$40.50</span></div>
+      </div>
+    </div>
+    <a href="https://sim1racing.as.me/?appointmentType=97567859" target="_blank" class="sim1-btn-primary">BOOK A CLASS</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ADULT CLASS CARD
+═══════════════════════════════════════ -->
+<div class="sim1-class-card">
+  <img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69e42f55e9ddd35f27551841/1776562006030/Untitled+design+%2810%29.png" alt="Adult Group Class" class="sim1-class-image">
+  <div class="sim1-class-content">
+    <div>
+      <div class="sim1-class-header">
+        <span class="sim1-class-badge">AGES 18+</span>
+        <h3 class="sim1-class-title">INTRO TO SIM RACING</h3>
+      </div>
+      <p class="sim1-class-description">Perfect for beginners! Learn the fundamentals of sim racing including racing line, braking technique, throttle control, and racecraft. Build real skills in a supportive group environment.</p>
+    </div>
+    <div class="sim1-class-details">
+      <div class="sim1-detail-item"><span class="sim1-detail-label">SCHEDULE</span><span class="sim1-detail-value">Monday &amp; Friday<br>7:00pm</span></div>
+      <div class="sim1-detail-item"><span class="sim1-detail-label">AGE GROUP</span><span class="sim1-detail-value">18+ Years Old</span></div>
+      <div class="sim1-detail-item"><span class="sim1-detail-label">BOOKING</span><span class="sim1-detail-value">Week to Week<br>No Commitment</span></div>
+      <div class="sim1-detail-item"><span class="sim1-detail-label">FORMAT</span><span class="sim1-detail-value">20min Classroom<br>+ Optional Practice</span></div>
+    </div>
+  </div>
+  <div class="sim1-price-section">
+    <div>
+      <div class="sim1-price-header">
+        <div class="sim1-price-title">Per Class</div>
+        <div class="sim1-price-main">$10</div>
+      </div>
+      <div class="sim1-price-description">Book one week at a time | FREE for members</div>
+      <div class="sim1-add-ons">
+        <div class="sim1-add-on-title">Optional Practice (With Coach Feedback) — 10% Off:</div>
+        <div class="sim1-add-on-item"><span>20 min simulator</span><span style="font-weight:bold;"><span class="sim1-add-on-old">$25</span>+$22.50</span></div>
+        <div class="sim1-add-on-item"><span>40 min simulator</span><span style="font-weight:bold;"><span class="sim1-add-on-old">$45</span>+$40.50</span></div>
+      </div>
+    </div>
+    <a href="https://sim1racing.as.me/?appointmentType=97574329" target="_blank" class="sim1-btn-primary">BOOK A CLASS</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     OPTIONAL PRACTICE NOTE
+═══════════════════════════════════════ -->
+<div style="max-width:1600px; margin:0 auto; padding:0 40px;">
+  <div class="gc-practice-note">
+    <strong>Optional Practice Time — 10% Off:</strong> After each class, students can add simulator time with live coach feedback at 10% off regular rates. This is entirely optional and can be added on the day — 20 minutes for $22.50 (reg. $25) or 40 minutes for $40.50 (reg. $45). It's a great way to immediately apply what was covered in the classroom session and accelerate your progress.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     MORE CLASSES COMING SOON
+═══════════════════════════════════════ -->
+<div style="max-width:1600px; margin:0 auto; padding:0 40px 60px;">
+  <div class="gc-coming-soon">
+    <div class="gc-coming-soon-eyebrow">Coming Soon</div>
+    <div class="gc-coming-soon-title">More Classes on the Way</div>
+    <p class="gc-coming-soon-body">We're working on expanding our class lineup with new programs for intermediate and advanced racers, one-on-one coaching sessions, and specialty workshops. Stay tuned — more classes will be announced soon. Follow us on Instagram or check back here for updates.</p>
+  </div>
+</div>
+
+<script>
+function applyLayout() {
+  const isMobile = window.innerWidth <= 600;
+  document.querySelector('.gc-steps-desktop').style.display = isMobile ? 'none' : 'grid';
+  document.querySelector('.gc-steps-wrap').style.display = isMobile ? 'block' : 'none';
+}
+applyLayout();
+window.addEventListener('resize', applyLayout);
+
+function makeSwipeable(el, onSwipe) {
+  let startX = 0, startY = 0, active = false;
+  el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; active = true; }, { passive: true });
+  el.addEventListener('touchend', e => {
+    if (!active) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) onSwipe(dx < 0 ? 1 : -1);
+    active = false;
+  }, { passive: true });
+  let mStartX = 0, mDown = false;
+  el.addEventListener('mousedown', e => { mStartX = e.clientX; mDown = true; });
+  window.addEventListener('mouseup', e => {
+    if (!mDown) return;
+    const dx = e.clientX - mStartX;
+    if (Math.abs(dx) > 40) onSwipe(dx < 0 ? 1 : -1);
+    mDown = false;
+  });
+}
+
+let stepSlide = 0;
+function changeStep(dir) { goStep((stepSlide + dir + 3) % 3); }
+function goStep(index) {
+  stepSlide = index;
+  document.getElementById('gc-steps-track').style.transform = `translateX(-${index * 33.333}%)`;
+  document.querySelectorAll('.gc-steps-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+}
+makeSwipeable(document.getElementById('gc-steps-track'), dir => changeStep(dir));
+</script>
