@@ -285,7 +285,16 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
 - **Phone:** (201) 988-1329 → `tel:201-988-1329`
 - **Email:** info@sim1racing.com → `mailto:info@sim1racing.com` (add `?subject=…` where helpful)
 - **Facility:** 20 full-motion simulators · 8,000 sq ft · 230" main screen · 250+ parking spaces · BYOB · high-speed WiFi / remote work space
-- **Offerings:** race with friends (walk-in or book), memberships (perks, unlimited racing, VIP lounge access), weekly & monthly qualifiers, monthly Time Attack Championship, teams & leagues, group classes & private coaching (adults and kids, all levels), live streams on the main screen, F1/NASCAR watch parties, daily Cars & Coffee, birthday parties, bachelor parties, corporate events & team building, meetings.
+- **Offerings:**
+  - Race with friends: walk in or book, and race **up to 20 people at the same time** while seeing each other on track.
+  - Memberships: discounted racing, exclusive benefits, a free issue of **Esses Magazine**, and more.
+  - Competitions: weekly & monthly qualifiers, monthly Time Attack Championship, championship events with prizes. **No leagues currently**, so don't mention leagues or teams.
+  - Group classes & **private coaching** (adults and kids, all levels).
+  - **The Lounge:** hang out with ping pong, foosball, poker, and access to the bar.
+  - Watch parties: **Formula 1, IMSA, WEC** and other major races on the 230" main screen (not NASCAR).
+  - **Car meets** (mainly) and Cars & Coffee: **not daily**; dates are posted on Instagram.
+  - Birthday parties, bachelor parties, corporate events & team building, meetings, remote work space, BYOB.
+- **Positioning:** speak to everyone, not only motorsport fans. Frame a visit as a **unique, one-of-a-kind outing** for friends, families, dates and teams. Avoid jargon like "professional motorsport simulation" in headline or intro copy.
 - **Site links:**
   - Book / daily rates: `https://www.sim1racing.com/daily-rates`
   - Pricing: `/pricing`
