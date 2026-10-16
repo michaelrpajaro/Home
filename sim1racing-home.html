@@ -24,7 +24,7 @@
     <div class="s1-hero__video" aria-hidden="true">
       <div class="s1-hero__ratio">
         <iframe
-          src="https://player.vimeo.com/video/1177535811?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&background=1"
+          src="https://player.vimeo.com/video/1177535811?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&background=1&quality=720p"
           frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -316,7 +316,7 @@
   font-family:var(--cond);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.15;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.8)}
 .s1-hours i{width:28px;height:4px;background:var(--red);transform:skewX(-30deg)}
 .s1-hero__title{font-family:var(--cond);font-weight:900;font-style:italic;text-transform:uppercase;color:#fff;
-  font-size:clamp(46px,9.5vw,140px);line-height:.9;text-shadow:0 3px 14px rgba(0,0,0,.45)}
+  font-size:clamp(46px,9.5vw,140px);line-height:.9}
 .s1-line{display:block;overflow:hidden;padding:.12em .25em;margin:-.12em 0}
 .s1-line>span{display:inline-block}
 .s1-hero__sub{font-size:clamp(17px,1.6vw,22px);color:#E4E4E7;max-width:720px;margin:28px auto 0}
@@ -497,6 +497,32 @@
   if (!root) return;
   root.classList.add('s1-js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero video: if Vimeo ever pauses or stalls while the hero is on screen, start it again
+  (function(){
+    var frame = root.querySelector('.s1-hero__ratio iframe'), heroEl = root.querySelector('.s1-hero');
+    if (!frame) return;
+    function start(){
+      try {
+        var player = new Vimeo.Player(frame);
+        var kick = function(){
+          if (document.hidden || heroEl.getBoundingClientRect().bottom <= 0) return;
+          player.getPaused().then(function(paused){ if (paused) player.play().catch(function(){}); }).catch(function(){});
+        };
+        player.on('pause', function(){ setTimeout(kick, 150); });
+        player.on('bufferend', kick);
+        setInterval(kick, 2000);
+        document.addEventListener('visibilitychange', kick);
+      } catch(e){}
+    }
+    if (window.Vimeo && window.Vimeo.Player) start();
+    else {
+      var api = document.createElement('script');
+      api.src = 'https://player.vimeo.com/api/player.js';
+      api.onload = start;
+      document.head.appendChild(api);
+    }
+  })();
 
   // Explore cue
   var cue = root.querySelector('.s1-scroll');
