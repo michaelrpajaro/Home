@@ -42,6 +42,27 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
    with `allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"`.
    **Never animate, filter or scale the video element itself.** Animate overlay layers above it instead. Dim it with `opacity:.8` on its wrapper plus a gradient overlay.
 
+8. **Desktop scaling (looks identical on every laptop/monitor).** The design is built at a **2560px-wide reference** (the owner's Windows laptop, 2560×1271). Narrower desktop screens show the *same* layout scaled down, not a bigger-looking version: a 1728px MacBook shows it at 67.5%. Phones and tablets (≤1024px) are not scaled. Implement it exactly like this:
+   - Put this script **first inside** `#s1-root`:
+     ```html
+     <script>
+     (function(){
+       var REF = 2560, MIN = 0.675, el = document.getElementById('s1-root');
+       function fit(){
+         var w = document.documentElement.clientWidth, h = window.innerHeight;
+         var z = w > 1024 ? Math.min(1, Math.max(MIN, w / REF)) : 1;
+         el.style.setProperty('--z', z);
+         el.style.setProperty('--vwu', (w / z / 100) + 'px');
+         el.style.setProperty('--vhu', (h / z / 100) + 'px');
+       }
+       fit(); window.addEventListener('resize', fit);
+     })();
+     </script>
+     ```
+   - Add `zoom:var(--z,1);` to the `.s1` rule.
+   - **Never write raw `vw`/`vh`/`svh` units.** Inside a zoomed element they come out the wrong size. Write `calc(N * var(--vwu,1vw))` and `calc(N * var(--vhu,1vh))` instead. Container units (`cqi`) and `px` are fine.
+   - Media queries still use the real screen width (1024px / 768px breakpoints are unaffected).
+
 ---
 
 ## 2. Brand tokens
