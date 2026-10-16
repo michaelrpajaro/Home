@@ -24,9 +24,9 @@
     <div class="s1-hero__video" aria-hidden="true">
       <div class="s1-hero__ratio">
         <iframe
-          src="https://player.vimeo.com/video/1177535811?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&background=1&quality=720p"
+          src="https://player.vimeo.com/video/1177535811?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0"
           frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           title="SIM1 WEBSITE VIDEO" tabindex="-1"></iframe>
       </div>
@@ -502,21 +502,17 @@
   root.classList.add('s1-js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Hero video: if Vimeo ever pauses or stalls while the hero is on screen, start it again
+  // Hero video: if Vimeo ever reports a pause while the hero is on screen, start it again
   (function(){
     var frame = root.querySelector('.s1-hero__ratio iframe'), heroEl = root.querySelector('.s1-hero');
     if (!frame) return;
     function start(){
       try {
         var player = new Vimeo.Player(frame);
-        var kick = function(){
+        player.on('pause', function(){
           if (document.hidden || heroEl.getBoundingClientRect().bottom <= 0) return;
-          player.getPaused().then(function(paused){ if (paused) player.play().catch(function(){}); }).catch(function(){});
-        };
-        player.on('pause', function(){ setTimeout(kick, 150); });
-        player.on('bufferend', kick);
-        setInterval(kick, 2000);
-        document.addEventListener('visibilitychange', kick);
+          setTimeout(function(){ player.play().catch(function(){}); }, 300);
+        });
       } catch(e){}
     }
     if (window.Vimeo && window.Vimeo.Player) start();
@@ -527,6 +523,9 @@
       document.head.appendChild(api);
     }
   })();
+
+  var iris = root.querySelector('.s1-hero__iris');
+  if (iris) iris.addEventListener('animationend', function(){ iris.parentNode.removeChild(iris); });
 
   root.querySelectorAll('.s1-intro').forEach(function(el){
     el.addEventListener('animationend', function(){ el.classList.add('is-done'); });
