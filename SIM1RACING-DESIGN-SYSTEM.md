@@ -290,7 +290,7 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
   - Memberships: discounted racing, exclusive benefits, a free issue of **Esses Magazine**, and more.
   - Competitions: weekly & monthly qualifiers, monthly Time Attack Championship, championship events with prizes. **No leagues currently**, so don't mention leagues or teams.
   - Group classes & **private coaching** (adults and kids, all levels).
-  - **The Lounge:** hang out with ping pong, foosball, poker, and access to the bar.
+  - **The Lounge:** hang out with ping pong, foosball, poker, and a **wet bar** (fridge, microwave, sink, small counter). It is **not a bar** and no drinks are served; pairs with BYOB.
   - Watch parties: **Formula 1, IMSA, WEC** and other major races on the 230" main screen (not NASCAR).
   - **Car meets** (mainly) and Cars & Coffee: **not daily**; dates are posted on Instagram.
   - Birthday parties, bachelor parties, corporate events & team building, meetings, remote work space, BYOB.
