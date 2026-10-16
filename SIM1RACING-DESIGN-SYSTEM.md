@@ -172,10 +172,11 @@ Small dark glass panels: `rgba(0,0,0,.45)`, blur, a 3px red left border, a conde
 A background photo with a left-to-right black gradient for legibility, a slow parallax as the page scrolls, and an XL two-line heading (red italic second line), lead paragraph, cards and two buttons.
 
 ### Visit / contact block
-A full-width layout:
-- **Left:** eyebrow, XL heading, a definition list (red small-caps keys: Hours / Address / Phone, with underlined links that turn red on hover), and buttons.
-- **Right:** a **2:1 exterior photo** (curtain reveal, then a slow Ken Burns drift: 24s alternating `scale(1)→scale(1.08)` with a slight pan; a frosted "250+ PARKING SPACES" tag fades in 1s after the reveal) above a grayscale-inverted Google Map embed.
-- A checkered-flag strip (24px conic-gradient squares) runs along the top edge.
+Full-width (`.s1-wrap--wide`) three-column layout, vertically centered:
+- **Left (`minmax(380px,.95fr)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (red small-caps keys Hours / Address / Phone, with underlined links that turn red on hover), and buttons.
+- **Middle (`1fr`):** a **square** (`aspect-ratio:1/1`) grayscale-inverted Google Map embed.
+- **Right (`1.3fr`):** an exterior photo at `aspect-ratio:1.3/1`, so it matches the map's height. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan), and a frosted "250+ PARKING SPACES" tag fades in 1s after the reveal. Upload at about **2000×1540**.
+- A checkered-flag strip (24px conic-gradient squares) runs along the top edge. Below 1024px the three columns stack.
 
 ### Mobile sticky bar (phones only)
 Appears after scrolling past the hero: a frosted dark bar pinned to the bottom with a phone-icon button and a full-width red Book Now button.
