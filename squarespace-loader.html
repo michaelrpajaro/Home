@@ -1,0 +1,50 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     SIM1Racing homepage — GitHub loader
+     Paste THIS into one Squarespace Code Block (full-width section, no
+     padding, "Display Source" OFF). You only paste it once.
+
+     It loads sim1racing-home.html from GitHub on every page view, so any
+     change committed to the branch below goes live on its own
+     (GitHub caches files for about 5 minutes).
+═══════════════════════════════════════════════════════════════════ -->
+<div id="s1-loader" style="min-height:100vh;background:#000;"></div>
+<script>
+(function(){
+  var OWNER  = 'michaelrpajaro';
+  var REPO   = 'Home';
+  var BRANCH = 'claude/affectionate-keller-apteyy';   // the branch your live site reads from
+  var FILE   = 'sim1racing-home.html';
+
+  var sources = [
+    'https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/refs/heads/' + BRANCH + '/' + FILE,
+    'https://cdn.jsdelivr.net/gh/' + OWNER + '/' + REPO + '@' + BRANCH + '/' + FILE   // backup if GitHub is down
+  ];
+  var box = document.getElementById('s1-loader');
+
+  function render(html){
+    box.innerHTML = html;
+    // Scripts added through innerHTML don't run, so re-create them in order
+    box.querySelectorAll('script').forEach(function(old){
+      var s = document.createElement('script');
+      for (var i = 0; i < old.attributes.length; i++) s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+      s.textContent = old.textContent;
+      old.parentNode.replaceChild(s, old);
+    });
+    box.style.minHeight = '';
+  }
+
+  function load(i){
+    if (i >= sources.length) {
+      box.innerHTML = '<div style="padding:120px 24px;text-align:center;color:#fff;font-family:sans-serif">' +
+        '<h2 style="margin:0 0 20px">The Largest Sim-Racing Center in America</h2>' +
+        '<a href="https://www.sim1racing.com/daily-rates" style="display:inline-block;background:#EF4444;color:#fff;padding:18px 40px;border-radius:6px;text-decoration:none;font-weight:bold">BOOK NOW</a></div>';
+      return;
+    }
+    fetch(sources[i], {cache: 'no-cache'})
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(render)
+      .catch(function(){ load(i + 1); });
+  }
+  load(0);
+})();
+</script>
