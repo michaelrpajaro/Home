@@ -32,6 +32,8 @@
       </div>
     </div>
     <div class="s1-hero__shade" aria-hidden="true"></div>
+    <div class="s1-hero__iris" aria-hidden="true"></div>
+    <div class="s1-hero__speed" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
     <div class="s1-hero__content">
       <p class="s1-hours s1-intro" style="--d:.1s">
@@ -294,13 +296,28 @@
 .s1-hero__ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .s1-hero__shade{position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.4) 40%,rgba(0,0,0,.55) 75%,#000 100%)}
+/* Opening effect: a dark vignette over the video "opens up" on load */
+.s1-hero__iris{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 0%,transparent 12%,#000 34%);
+  will-change:transform,opacity;animation:s1-iris 2.6s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes s1-iris{0%{transform:scale(1);opacity:1}60%{opacity:1}100%{transform:scale(5);opacity:0}}
+/* Red speed streaks */
+.s1-hero__speed{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.s1-hero__speed i{position:absolute;left:-30%;height:2px;width:22%;background:linear-gradient(90deg,transparent,rgba(239,68,68,.9));opacity:0;
+  will-change:transform,opacity;animation:s1-streak 3.2s linear infinite}
+.s1-hero__speed i:nth-child(1){top:18%;animation-delay:.2s}
+.s1-hero__speed i:nth-child(2){top:34%;animation-delay:1.6s;width:14%}
+.s1-hero__speed i:nth-child(3){top:52%;animation-delay:.9s}
+.s1-hero__speed i:nth-child(4){top:68%;animation-delay:2.4s;width:30%}
+.s1-hero__speed i:nth-child(5){top:80%;animation-delay:1.2s;width:12%}
+.s1-hero__speed i:nth-child(6){top:44%;animation-delay:2.9s;width:18%}
+@keyframes s1-streak{0%{transform:translate3d(0,0,0);opacity:0}10%{opacity:.8}60%{opacity:.5}100%{transform:translate3d(620%,0,0);opacity:0}}
 .s1-hero__content{position:relative;z-index:2;text-align:center;padding:120px 24px 150px;max-width:1300px}
 .s1-hours{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:28px;
   font-family:var(--cond);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.15;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.8)}
 .s1-hours i{width:28px;height:4px;background:var(--red);transform:skewX(-30deg)}
 .s1-hero__title{font-family:var(--cond);font-weight:900;font-style:italic;text-transform:uppercase;color:#fff;
-  font-size:clamp(46px,9.5vw,140px);line-height:.9;text-shadow:0 6px 40px rgba(0,0,0,.5)}
-.s1-line{display:block;overflow:hidden;padding:0 .08em .04em}
+  font-size:clamp(46px,9.5vw,140px);line-height:.9;text-shadow:0 3px 14px rgba(0,0,0,.45)}
+.s1-line{display:block;overflow:hidden;padding:.12em .25em;margin:-.12em 0}
 .s1-line>span{display:inline-block}
 .s1-hero__sub{font-size:clamp(17px,1.6vw,22px);color:#E4E4E7;max-width:720px;margin:28px auto 0}
 .s1-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;
@@ -379,6 +396,10 @@
 .s1-exp{background:linear-gradient(180deg,#000 0%,var(--ink-2) 100%)}
 .s1-list{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;border-top:1px solid var(--line)}
 .s1-row{position:relative;display:grid;grid-template-columns:64px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
+.s1-row::before{content:"";position:absolute;inset:0 -16px;border-radius:8px;pointer-events:none;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(239,68,68,.14),transparent 60%);opacity:0;transition:opacity .4s}
+.s1-row:hover::before{opacity:1}
+.s1-row>*{position:relative}
 .s1-row::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
 .s1-row:hover::after{transform:scaleX(1)}
 .s1-row__n{font-family:var(--cond);font-weight:900;font-style:italic;font-size:34px;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.35);transition:color .4s,-webkit-text-stroke-color .4s}
@@ -465,6 +486,7 @@
   .s1 *,.s1 *::before,.s1 *::after{animation:none!important;transition:none!important}
   .s1-js .s1-intro,.s1-js .s1-reveal{opacity:1!important;transform:none!important}
   .s1-js .s1-wipe::before{display:none}
+  .s1-hero__iris{display:none}
   .s1-js .s1-wipe .s1-split__img{scale:1}
 }
 </style>
@@ -541,6 +563,15 @@
       if (!img.dataset.retried) { img.dataset.retried = '1'; img.src = img.src.split('?')[0] + '?format=1500w'; return; }
       img.style.display = 'none';
       if (window.console) console.warn('SIM1 homepage: photo failed to load ->', img.src);
+    });
+  });
+
+  // Red glow follows the cursor on the experience list
+  root.querySelectorAll('.s1-row').forEach(function(row){
+    row.addEventListener('pointermove', function(e){
+      var r = row.getBoundingClientRect();
+      row.style.setProperty('--mx', (e.clientX - r.left + 16) + 'px');
+      row.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
   });
 
