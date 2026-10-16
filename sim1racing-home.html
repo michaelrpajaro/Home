@@ -449,6 +449,10 @@
   .s1-ctas .s1-btn{flex:1 1 100%}
   .s1-hours{flex-direction:column;gap:10px}
   .s1-hero__title .s1-line>span{-webkit-text-stroke-width:5px}
+  /* headline sizes itself so "SIM-RACING CENTER" fills the width on one line */
+  .s1-hero{container-type:inline-size}
+  .s1-hero__title{font-size:calc((100vw - 24px) / 8.1);font-size:calc((100cqi - 24px) / 8.1);margin-left:-6px;margin-right:-6px}
+  .s1-line{white-space:nowrap;padding-left:.05em;padding-right:.05em}
   .s1-statband{padding:80px 0 40px}
   .s1-stats{grid-template-columns:repeat(2,1fr);row-gap:8px}
   .s1-stat{padding:28px 10px 32px}
