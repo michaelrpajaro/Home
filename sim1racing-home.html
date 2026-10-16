@@ -48,7 +48,7 @@
 
       <p class="s1-hero__sub s1-intro" style="--d:.75s">
         Experience the thrill of professional motorsport simulation in Paramus, NJ.
-        20 full-motion simulators. 8,000 square feet. Walk-ins welcome.
+        <span class="s1-hero__sub2">20 full-motion simulators. 8,000 square feet. Walk-ins welcome.</span>
       </p>
 
       <div class="s1-ctas s1-ctas--center s1-intro" style="--d:.9s">
@@ -291,7 +291,7 @@
 
 /* ───────── 1. Hero ───────── */
 .s1-hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
-.s1-hero__video{position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;transform:translate(-50%,-50%);pointer-events:none}
+.s1-hero__video{position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;transform:translate(-50%,-50%);pointer-events:none;opacity:.8}
 .s1-hero__ratio{padding:56.25% 0 0;position:relative;min-height:100vh}
 .s1-hero__ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .s1-hero__shade{position:absolute;inset:0;pointer-events:none;
@@ -311,15 +311,24 @@
 .s1-hero__speed i:nth-child(5){top:80%;animation-delay:1.2s;width:12%}
 .s1-hero__speed i:nth-child(6){top:44%;animation-delay:2.9s;width:18%}
 @keyframes s1-streak{0%{transform:translate3d(0,0,0);opacity:0}10%{opacity:.8}60%{opacity:.5}100%{transform:translate3d(620%,0,0);opacity:0}}
-.s1-hero__content{position:relative;z-index:2;text-align:center;padding:120px 24px 150px;max-width:1300px}
+.s1-hero__content{position:relative;z-index:2;text-align:center;padding:120px 24px 150px;max-width:1600px}
 .s1-hours{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:28px;
-  font-family:var(--cond);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.15;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.8)}
+  font-family:var(--cond);font-weight:800;font-size:clamp(22px,2.5vw,40px);line-height:1.15;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.8)}
 .s1-hours i{width:28px;height:4px;background:var(--red);transform:skewX(-30deg)}
 .s1-hero__title{font-family:var(--cond);font-weight:900;font-style:italic;text-transform:uppercase;color:#fff;
-  font-size:clamp(46px,9.5vw,140px);line-height:.9}
-.s1-line{display:block;overflow:hidden;padding:.12em .25em;margin:-.12em 0}
+  font-size:clamp(46px,min(10.5vw,16vh),200px);line-height:.9}
+.s1-hero__title{margin:-.1em 0}
+.s1-line{display:block;overflow:hidden;padding:.1em .25em}
+.s1-line+.s1-line{margin-top:-.2em}
 .s1-line>span{display:inline-block}
-.s1-hero__sub{font-size:clamp(17px,1.6vw,22px);color:#E4E4E7;max-width:720px;margin:28px auto 0}
+.s1-hero__sub{font-size:clamp(17px,1.75vw,28px);color:#E4E4E7;max-width:960px;margin:28px auto 0}
+@media (min-width:1025px){
+  .s1-hero__content{padding:96px 32px 120px}
+  .s1-hero__sub2{display:block}
+  .s1-hero .s1-ctas{margin-top:48px;gap:18px}
+  .s1-hero .s1-btn{font-size:clamp(19px,1.5vw,24px);padding:22px 52px}
+}
+@media (min-width:1025px) and (max-height:960px){ .s1-scroll{display:none} }
 .s1-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;
   font-family:var(--cond);font-weight:700;letter-spacing:.3em;font-size:13px;text-transform:uppercase;color:rgba(255,255,255,.8)}
 .s1-scroll i{width:2px;height:46px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
