@@ -178,7 +178,7 @@ Full-width three-column layout (no max width, side padding `clamp(20px,1.6vw,32p
 - **Left (`max-content`, items offset with `margin-left:clamp(0px,2.4vw,48px)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (bold white 18px keys Hours / Address / Phone; values as underlined links that turn red on hover), and two buttons kept on one row (padding 18×28px).
 - **Middle (`1fr`):** a grayscale-inverted Google Map embed.
 - **Right (`1.25fr`):** an exterior photo. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan).
-- **Alignment rule:** the map and photo run from the **top of the heading** to the **bottom of the buttons**. Do this with `.s1-visit__info{display:contents}` and grid rows: eyebrow row 1, heading row 2, list row 3, buttons row 4; map and photo `grid-row:2/5`. The boxes come out roughly square (about 1–1.15:1). Upload the photo at about **2000×1800** with the subject centered.
+- **Alignment rule:** the map and photo run from the **top of the heading** to the **bottom of the buttons**. Do this with `.s1-visit__info{display:contents}` and grid rows: eyebrow row 1, heading row 2, list row 3, buttons row 4; map and photo `grid-row:2/5`. The boxes come out roughly square: about 0.9:1 on laptops and up to 1.2:1 on large monitors. Upload the photo **square, 2000×2000**, with the subject inside the middle ~75%, because the edges get trimmed depending on screen size.
 - A checkered-flag strip runs along the top edge. Below 1024px everything stacks (map 1:1, photo 1.3:1).
 
 ### Mobile sticky bar (phones only)
