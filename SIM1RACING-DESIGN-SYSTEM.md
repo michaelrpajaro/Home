@@ -301,7 +301,7 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
   - Group packages / events: `/group-packages`
   - Group classes: `/group-classes`
   - Private coaching: `/private-coaching`
-  - Events calendar: `/portfolio-1-1`
+  - Events calendar: `https://www.sim1racing.com/events`
 - **Hero video:** see section 1, item 7.
 - **Venue photos:**
   - `https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5cffcb41fbc6a94e62da2/1774571517828/CTA06637.jpg`
