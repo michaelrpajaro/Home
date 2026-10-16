@@ -176,9 +176,9 @@
       </div>
       <!-- PHOTO: outside of the building. The box takes this photo's exact shape, so nothing is cropped.
            Best: square 2000 x 2000 or slightly portrait (up to 2000 x 2500).
-           TEMPORARY photo below until the exterior shot is ready: replace the src link. -->
+           The map narrows to make room for it. -->
       <figure class="s1-exterior s1-curtain">
-        <img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5cffcb41fbc6a94e62da2/1774571517828/CTA06637.jpg" alt="Outside SIM1Racing at 145 Route 4, Paramus NJ" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@f6c504c9b6163a7ae40ca85c5eea69a9a072c7c4/images/exterior.jpg" alt="Outside SIM1Racing at 145 Route 4, Paramus NJ, with an Audi R8 and McLaren parked in front" loading="lazy">
       </figure>
     </div>
   </section>
@@ -378,7 +378,7 @@
   background:conic-gradient(#fff 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/24px 24px}
 .s1-visit__title{font-size:clamp(42px,4.4vw,84px);white-space:nowrap}
 .s1-visit .s1-wrap--wide{max-width:none;padding-left:clamp(20px,1.6vw,32px);padding-right:clamp(20px,1.6vw,32px)}
-.s1-visit__grid{--boxh:520px;--ext-ratio:1;display:grid;grid-template-columns:max-content minmax(260px,1fr) minmax(0,calc(var(--boxh) * var(--ext-ratio)));column-gap:clamp(40px,4.2vw,88px);row-gap:0;align-items:stretch}
+.s1-visit__grid{--boxh:520px;--ext-ratio:1.7778;display:grid;grid-template-columns:max-content minmax(220px,1fr) minmax(0,calc(var(--boxh) * var(--ext-ratio)));column-gap:clamp(40px,4.2vw,88px);row-gap:0;align-items:stretch}
 /* map + photo run from the top of the heading to the bottom of the buttons */
 .s1-visit__info{display:contents}
 .s1-visit__info>*{margin-left:clamp(0px,2.4vw,48px)}
@@ -388,8 +388,8 @@
 .s1-visit__info>.s1-ctas{grid-column:1;grid-row:4}
 .s1-visit__info>.s1-ctas{flex-wrap:nowrap;gap:12px}
 .s1-visit__info .s1-btn{padding:18px 28px}
-.s1-visit__grid>.s1-visit__map{grid-column:2;grid-row:2/5}
-.s1-visit__grid>.s1-exterior{grid-column:3;grid-row:2/5}
+.s1-visit__grid>.s1-visit__map{grid-column:2;grid-row:2/5;align-self:start;height:var(--exth,100%)}
+.s1-visit__grid>.s1-exterior{grid-column:3;grid-row:2/5;align-self:start;width:100%;aspect-ratio:var(--ext-ratio)}
 .s1-exterior{position:relative;margin:0;border-radius:12px;overflow:hidden;background:var(--ink-3)}
 .s1-exterior img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;transition:filter .5s}
 .s1-exterior::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);transition:box-shadow .4s}
@@ -412,7 +412,7 @@
   .s1-visit__grid{grid-template-columns:1fr;gap:0}
   .s1-visit__info>*{margin-left:0}
   .s1-visit__info>*,.s1-visit__grid>.s1-visit__map,.s1-visit__grid>.s1-exterior{grid-column:1;grid-row:auto}
-  .s1-visit__grid>.s1-visit__map{aspect-ratio:1/1;margin-top:48px}
+  .s1-visit__grid>.s1-visit__map{aspect-ratio:1/1;height:auto;margin-top:48px}
   .s1-visit__grid>.s1-exterior{aspect-ratio:var(--ext-ratio);margin-top:16px}
   .s1-events__types{grid-template-columns:1fr;max-width:460px}
 }
@@ -542,9 +542,12 @@
     function height(){ var h = (ctas.offsetTop + ctas.offsetHeight) - title.offsetTop; if (h > 0) grid.style.setProperty('--boxh', h + 'px'); }
     if (img.complete) ratio();
     img.addEventListener('load', ratio);
-    height();
-    if ('ResizeObserver' in window) new ResizeObserver(height).observe(grid);
-    else window.addEventListener('resize', height);
+    var fig = img.parentNode;
+    function sync(){ height(); grid.style.setProperty('--exth', fig.offsetHeight + 'px'); }
+    img.addEventListener('load', function(){ requestAnimationFrame(sync); });
+    sync();
+    if ('ResizeObserver' in window) { var ro = new ResizeObserver(function(){ requestAnimationFrame(sync); }); ro.observe(grid); ro.observe(fig); }
+    else window.addEventListener('resize', sync);
   })();
 
   // Photos: if a URL fails, retry once with Squarespace's resized version, then show a dark panel
