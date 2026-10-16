@@ -174,7 +174,8 @@
           src="https://maps.google.com/maps?q=145%20Route%204%2C%20Paramus%2C%20NJ%2007652&z=15&output=embed"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <!-- PHOTO: outside of the building (square, 2000 x 2000; keep the subject in the middle ~75%).
+      <!-- PHOTO: outside of the building. The box takes this photo's exact shape, so nothing is cropped.
+           Best: square 2000 x 2000 or slightly portrait (up to 2000 x 2500).
            TEMPORARY photo below until the exterior shot is ready: replace the src link. -->
       <figure class="s1-exterior s1-curtain">
         <img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5cffcb41fbc6a94e62da2/1774571517828/CTA06637.jpg" alt="Outside SIM1Racing at 145 Route 4, Paramus NJ" loading="lazy">
@@ -377,7 +378,7 @@
   background:conic-gradient(#fff 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/24px 24px}
 .s1-visit__title{font-size:clamp(42px,4.4vw,84px);white-space:nowrap}
 .s1-visit .s1-wrap--wide{max-width:none;padding-left:clamp(20px,1.6vw,32px);padding-right:clamp(20px,1.6vw,32px)}
-.s1-visit__grid{display:grid;grid-template-columns:max-content minmax(0,1fr) minmax(0,1.25fr);column-gap:clamp(40px,4.2vw,88px);row-gap:0;align-items:stretch}
+.s1-visit__grid{--boxh:520px;--ext-ratio:1;display:grid;grid-template-columns:max-content minmax(260px,1fr) minmax(0,calc(var(--boxh) * var(--ext-ratio)));column-gap:clamp(40px,4.2vw,88px);row-gap:0;align-items:stretch}
 /* map + photo run from the top of the heading to the bottom of the buttons */
 .s1-visit__info{display:contents}
 .s1-visit__info>*{margin-left:clamp(0px,2.4vw,48px)}
@@ -389,12 +390,11 @@
 .s1-visit__info .s1-btn{padding:18px 28px}
 .s1-visit__grid>.s1-visit__map{grid-column:2;grid-row:2/5}
 .s1-visit__grid>.s1-exterior{grid-column:3;grid-row:2/5}
-.s1-exterior{position:relative;margin:0;min-height:320px;border-radius:12px;overflow:hidden;background:var(--ink-3)}
-.s1-exterior img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;animation:s1-kenburns 24s ease-in-out infinite alternate}
-@keyframes s1-kenburns{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.08) translate3d(-1.5%,-1%,0)}}
-.s1-exterior::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
-  background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));transition:box-shadow .4s}
+.s1-exterior{position:relative;margin:0;border-radius:12px;overflow:hidden;background:var(--ink-3)}
+.s1-exterior img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;transition:filter .5s}
+.s1-exterior::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);transition:box-shadow .4s}
 .s1-exterior:hover::after{box-shadow:inset 0 0 0 2px var(--red)}
+.s1-exterior:hover img{filter:brightness(1.08)}
 .s1-visit__list{margin-top:36px;border-top:1px solid var(--line)}
 .s1-visit__list>div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
 .s1-visit__list dt{font-family:var(--cond);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-size:18px;padding-top:1px}
@@ -413,7 +413,7 @@
   .s1-visit__info>*{margin-left:0}
   .s1-visit__info>*,.s1-visit__grid>.s1-visit__map,.s1-visit__grid>.s1-exterior{grid-column:1;grid-row:auto}
   .s1-visit__grid>.s1-visit__map{aspect-ratio:1/1;margin-top:48px}
-  .s1-visit__grid>.s1-exterior{aspect-ratio:1.3/1;margin-top:16px}
+  .s1-visit__grid>.s1-exterior{aspect-ratio:var(--ext-ratio);margin-top:16px}
   .s1-events__types{grid-template-columns:1fr;max-width:460px}
 }
 @media (max-width:768px){
@@ -531,6 +531,21 @@
   } else {
     targets.forEach(function(el){ el.classList.add('is-in'); });
   }
+
+  // Visit section: the exterior photo box takes the photo's exact shape (never cropped).
+  // Its height runs from the top of the heading to the bottom of the buttons.
+  (function(){
+    var grid = root.querySelector('.s1-visit__grid'), title = root.querySelector('.s1-visit__title'),
+        ctas = root.querySelector('.s1-visit__info > .s1-ctas'), img = root.querySelector('.s1-exterior img');
+    if (!grid || !title || !ctas || !img) return;
+    function ratio(){ if (img.naturalWidth) grid.style.setProperty('--ext-ratio', (img.naturalWidth / img.naturalHeight).toFixed(4)); }
+    function height(){ var h = (ctas.offsetTop + ctas.offsetHeight) - title.offsetTop; if (h > 0) grid.style.setProperty('--boxh', h + 'px'); }
+    if (img.complete) ratio();
+    img.addEventListener('load', ratio);
+    height();
+    if ('ResizeObserver' in window) new ResizeObserver(height).observe(grid);
+    else window.addEventListener('resize', height);
+  })();
 
   // Photos: if a URL fails, retry once with Squarespace's resized version, then show a dark panel
   root.querySelectorAll('.s1-events__bg, .s1-shot img').forEach(function(img){
