@@ -291,10 +291,10 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
   - Competitions: weekly & monthly qualifiers, monthly Time Attack Championship, championship events with prizes. **No leagues currently**, so don't mention leagues or teams.
   - Group classes & **private coaching** (adults and kids, all levels).
   - **The Lounge:** hang out with ping pong, foosball, poker, and a **wet bar** (fridge, microwave, sink, small counter). It is **not a bar** and no drinks are served; pairs with BYOB.
-  - Watch parties: **Formula 1, IMSA, WEC** and other major races on the 230" main screen (not NASCAR).
+  - Watch parties: **Formula 1, IMSA, WEC** and other major races on the 230" main screen or the TVs throughout the facility (not NASCAR).
   - **Car meets** (mainly) and Cars & Coffee: **not daily**; dates are posted on Instagram.
   - Birthday parties, bachelor parties, corporate events & team building, meetings, remote work space, BYOB.
-- **Positioning:** speak to everyone, not only motorsport fans. Frame a visit as a **unique, one-of-a-kind outing** for friends, families, dates and teams. Avoid jargon like "professional motorsport simulation" in headline or intro copy.
+- **Positioning:** speak to everyone, not only motorsport fans. Frame a visit as a **one-of-a-kind experience for all ages and skill levels**, for friends, families, dates and teams. Don't tie intro copy to "Paramus, NJ" in a way that sounds local-only; people travel to visit (the address belongs in the visit/contact block). Avoid jargon like "professional motorsport simulation" in headline or intro copy.
 - **Site links:**
   - Book / daily rates: `https://www.sim1racing.com/daily-rates`
   - Pricing: `/pricing`
