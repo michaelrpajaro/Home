@@ -37,7 +37,7 @@
 
     <div class="s1-hero__content">
       <p class="s1-hours s1-intro" style="--d:.1s">
-        <span>Open 7 Days a Week</span><i aria-hidden="true"></i><span>11AM – 11PM</span>
+        <span>Open 7 Days a Week</span><span>11AM – 11PM</span>
       </p>
 
       <h1 class="s1-hero__title">
@@ -138,7 +138,7 @@
     <div class="s1-events__shade" aria-hidden="true"></div>
     <div class="s1-wrap s1-events__inner">
       <p class="s1-eyebrow s1-eyebrow--light s1-reveal">Private Events</p>
-      <h2 class="s1-h2 s1-h2--xl s1-reveal">Your event.<br><span class="s1-italic s1-red">Our venue.</span></h2>
+      <h2 class="s1-h2 s1-h2--xl s1-reveal">Nothing else<br><span class="s1-italic s1-red">like it.</span></h2>
       <p class="s1-lead s1-reveal">SIM1Racing is more than a sim racing center. With space for your whole group, it's the perfect venue for corporate events, meetings, private parties, team-building experiences and everything in between.</p>
       <div class="s1-events__types">
         <div class="s1-reveal"><strong>Corporate Events</strong><span>Team building that people actually want to attend</span></div>
@@ -147,7 +147,7 @@
       </div>
       <div class="s1-ctas s1-reveal">
         <a class="s1-btn s1-btn--red" href="/group-packages"><span>Plan Your Event</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="s1-btn s1-btn--ghost" href="mailto:info@sim1racing.com">Email info@sim1racing.com</a>
+        <a class="s1-btn s1-btn--ghost" href="mailto:info@sim1racing.com?subject=Private%20Event%20Inquiry">Email Us</a>
       </div>
     </div>
   </section>
@@ -155,7 +155,7 @@
   <!-- ══════════════ 5. READY TO RACE ══════════════ -->
   <section class="s1-section s1-visit">
     <div class="s1-visit__flag" aria-hidden="true"></div>
-    <div class="s1-wrap s1-visit__grid">
+    <div class="s1-wrap s1-wrap--wide s1-visit__grid">
       <div class="s1-visit__info">
         <p class="s1-eyebrow s1-reveal">Visit Us</p>
         <h2 class="s1-h2 s1-visit__title s1-reveal">Come see it<br><span class="s1-red">for yourself.</span></h2>
@@ -169,10 +169,18 @@
           <a class="s1-btn s1-btn--ghost" href="tel:201-988-1329">Call Us</a>
         </div>
       </div>
-      <div class="s1-visit__map s1-reveal">
-        <iframe title="Map to SIM1Racing, 145 Route 4, Paramus NJ" loading="lazy"
-          src="https://maps.google.com/maps?q=145%20Route%204%2C%20Paramus%2C%20NJ%2007652&z=15&output=embed"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="s1-visit__media">
+        <!-- PHOTO: outside of the venue (horizontal, 2:1 — e.g. 2400 x 1200).
+             TEMPORARY photo below until the exterior shot is ready: replace the src link. -->
+        <figure class="s1-exterior s1-curtain">
+          <img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5cffcb41fbc6a94e62da2/1774571517828/CTA06637.jpg" alt="Outside SIM1Racing at 145 Route 4, Paramus NJ" loading="lazy">
+          <figcaption class="s1-exterior__tag"><strong>250+</strong><span>Parking<br>spaces</span></figcaption>
+        </figure>
+        <div class="s1-visit__map s1-reveal">
+          <iframe title="Map to SIM1Racing, 145 Route 4, Paramus NJ" loading="lazy"
+            src="https://maps.google.com/maps?q=145%20Route%204%2C%20Paramus%2C%20NJ%2007652&z=15&output=embed"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -257,11 +265,10 @@
 .s1-hero__speed i:nth-child(6){top:44%;animation-delay:2.9s;width:18%}
 @keyframes s1-streak{0%{transform:translate3d(0,0,0);opacity:0}10%{opacity:.8}60%{opacity:.5}100%{transform:translate3d(620%,0,0);opacity:0}}
 .s1-hero__content{position:relative;z-index:2;text-align:center;padding:120px 24px 150px;max-width:1760px}
-.s1-hours{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:28px;
+.s1-hours{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px .9em;margin-bottom:28px;
   font-family:var(--cond);font-weight:800;font-size:clamp(22px,2.5vw,40px);line-height:1.15;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.8)}
-.s1-hours i{width:28px;height:4px;background:var(--red);transform:skewX(-30deg)}
 .s1-hero__title{font-family:var(--cond);font-weight:900;font-style:italic;text-transform:uppercase;color:#fff;
-  font-size:clamp(46px,min(10.5vw,16vh),200px);line-height:.9;letter-spacing:.04em;
+  font-size:clamp(46px,min(10.5vw,16vh),200px);line-height:.9;letter-spacing:.03em;
   /* sized to the block's real width (not the browser window), so each line always fits on one row */
   font-size:min(12cqi,18vh,calc((min(100cqi, 1760px) - 64px) / 8.45),210px)}
 .s1-hero__title{margin:-.1em 0}
@@ -371,14 +378,27 @@
 .s1-visit__flag{position:absolute;top:0;left:0;right:0;height:24px;opacity:.9;
   background:conic-gradient(#fff 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/24px 24px}
 .s1-visit__title{font-size:clamp(42px,5.6vw,96px);white-space:nowrap}
-.s1-visit__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:stretch}
+.s1-visit__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:clamp(40px,4vw,72px);align-items:stretch}
+.s1-visit__media{display:grid;grid-template-rows:auto minmax(240px,1fr);gap:16px}
+.s1-exterior{position:relative;margin:0;aspect-ratio:2/1;border-radius:12px;overflow:hidden;background:var(--ink-3)}
+.s1-exterior img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;animation:s1-kenburns 24s ease-in-out infinite alternate}
+@keyframes s1-kenburns{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.08) translate3d(-1.5%,-1%,0)}}
+.s1-exterior::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+  background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));transition:box-shadow .4s}
+.s1-exterior:hover::after{box-shadow:inset 0 0 0 2px var(--red)}
+.s1-exterior__tag{position:absolute;left:20px;bottom:20px;z-index:1;display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:10px;
+  background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);
+  transition:opacity .8s var(--ease) 1s,transform .8s var(--ease) 1s}
+.s1-js .s1-exterior:not(.is-in) .s1-exterior__tag{opacity:0;transform:translateY(16px)}
+.s1-exterior__tag strong{font-family:var(--cond);font-weight:900;font-style:italic;font-size:38px;line-height:1;color:var(--red)}
+.s1-exterior__tag span{font-family:var(--cond);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;line-height:1.3;color:#fff}
 .s1-visit__list{margin-top:36px;border-top:1px solid var(--line)}
 .s1-visit__list>div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
 .s1-visit__list dt{font-family:var(--cond);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-size:15px;padding-top:3px}
 .s1-visit__list dd{color:#E4E4E7;font-size:19px;line-height:1.45}
 .s1-visit__list a{border-bottom:1px solid rgba(255,255,255,.25);transition:color .3s,border-color .3s}
 .s1-visit__list a:hover{color:var(--red);border-color:var(--red)}
-.s1-visit__map{border-radius:10px;overflow:hidden;min-height:460px;border:1px solid var(--line);position:relative;background:var(--ink-3)}
+.s1-visit__map{border-radius:12px;overflow:hidden;min-height:240px;border:1px solid var(--line);position:relative;background:var(--ink-3)}
 .s1-visit__map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
 
 /* ───────── Sticky mobile bar ───────── */
@@ -414,7 +434,7 @@
   .s1-events{padding:100px 0;min-height:0}
   .s1-events__shade{background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.85)),linear-gradient(0deg,#000 0%,transparent 20%,transparent 85%,#000 100%)}
   .s1-visit__list>div{grid-template-columns:90px 1fr}
-  .s1-visit__map{min-height:320px}
+  .s1-visit__map{min-height:280px}
   .s1-sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:999;align-items:center;gap:10px;padding:8px;
     background:rgba(12,12,14,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:12px;
     transform:translateY(150%);transition:transform .45s var(--ease);box-shadow:0 20px 40px rgba(0,0,0,.5)}
@@ -426,6 +446,7 @@
   .s1 *,.s1 *::before,.s1 *::after{animation:none!important;transition:none!important}
   .s1-js .s1-intro,.s1-js .s1-reveal{opacity:1!important;transform:none!important}
   .s1-js .s1-curtain::before{display:none}
+  .s1-exterior__tag{opacity:1!important;transform:none!important}
   .s1-js .s1-curtain img{scale:1}
   .s1-hero__iris{display:none}
 }
