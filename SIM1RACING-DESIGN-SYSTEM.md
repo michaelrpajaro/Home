@@ -79,15 +79,15 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 | Role | Style |
 |---|---|
 | **Hero headline** | Barlow Condensed 900 *italic*, UPPERCASE, `line-height:.9`, `letter-spacing:.03em`, 4.5px black outline (`-webkit-text-stroke:9px #000; paint-order:stroke fill`). Key phrase in red. Each line is its own block that never wraps; size it to the block width (section 5). |
-| **Section heading (`.s1-h2`)** | Barlow Condensed 900 upright, UPPERCASE, `clamp(42px,5.4vw,76px)`, `line-height:.96`, white, with the second phrase in red: `More than <span class="s1-red">just racing.</span>` |
-| **XL heading (`.s1-h2--xl`)** | Same, `clamp(50px,8vw,120px)`, `line-height:.9`. Often two lines, with the red second line in *italic*: `Nothing else<br><span class="s1-italic s1-red">like it.</span>` |
+| **Section heading (`.s1-h2`)** | Barlow Condensed 900 upright, UPPERCASE, `clamp(42px,5.4vw,76px)`, `line-height:.96`, white, with the second phrase in red: `More than <span class="s1-red">just racing</span>` |
+| **XL heading (`.s1-h2--xl`)** | Same, `clamp(50px,8vw,120px)`, `line-height:.9`. Often two lines, with the red second line in *italic*: `Your next party<br><span class="s1-italic s1-red">starts here</span>` |
 | **Eyebrow / label (`.s1-eyebrow`)** | Barlow Condensed 700, 16px, `letter-spacing:.28em`, UPPERCASE, red, preceded by a 34×3px slanted bar (`skewX(-30deg)`). Sits above every section heading. |
 | **Lead paragraph (`.s1-lead`)** | Barlow 400, `clamp(17px,1.35vw,19px)`, `line-height:1.75`, `#C9C9CF`, max-width ~580px. |
 | **Small caps labels** (stat labels, list keys) | Barlow Condensed 700–800, 14–20px, `letter-spacing:.2em`, UPPERCASE. |
 | **Big numbers** | Barlow Condensed 900 *italic*, up to 150px, white; units like `"` or `+` in red at 50% size. |
 | **Outlined numbers** (01, 02…) | Barlow Condensed 900 italic, transparent fill, `-webkit-text-stroke:1.5px var(--red)`. |
 
-Headlines end with a period for punch ("Nothing else like it.", "Come see it for yourself.").
+**No periods at the end of headings.** The owner dislikes the "Title." style. Write "Come see it for yourself", not "Come see it for yourself." The same goes for eyebrows, column titles and button labels.
 
 ---
 
@@ -172,7 +172,7 @@ Small dark glass panels: `rgba(0,0,0,.45)`, blur, a 3px red left border, a conde
 A background photo with a left-to-right black gradient for legibility, a slow parallax as the page scrolls, and an XL two-line heading (red italic second line), lead paragraph, cards and two buttons.
 
 ### Visit / contact block
-Full-width three-column layout (`.s1-wrap--wide`, side padding `clamp(24px,2.8vw,56px)`):
+Full-width three-column layout (no max width, side padding `clamp(20px,1.6vw,32px)`, generous column gaps `clamp(40px,4.2vw,88px)`):
 - **Left (`minmax(360px,.8fr)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (red small-caps keys Hours / Address / Phone, with underlined links that turn red on hover), and two buttons kept on one row (padding 18×28px).
 - **Middle (`1fr`):** a grayscale-inverted Google Map embed.
 - **Right (`1.25fr`):** an exterior photo. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan), and a frosted "250+ PARKING SPACES" tag fades in 1s after the reveal.
@@ -252,10 +252,11 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
 ## 7. Voice & copy
 
 - **Tone:** confident, energetic, short. Headlines are 2–6 words, often split across two lines with the punchline in red.
+- **No trailing periods on any heading** (see section 3).
 - **Pattern:** an eyebrow names the topic ("Private Events", "Visit Us", "The Experience"), then the heading makes the claim.
 - Vary vocabulary, and don't stack "racing / race / racer" in consecutive headings.
 - **Calls to action:** "Book Now", "Plan Your Event", "Email Us", "Call Us", "View Events →", "Group Coaching →".
-- **Headings already used on the homepage** (don't reuse verbatim): "The Largest Sim-Racing Center in America", "More than just racing.", "Nothing else like it.", "Come see it for yourself."
+- **Headings already used on the homepage** (don't reuse verbatim): "The Largest Sim-Racing Center in America", "More than just racing", "Your next party starts here", "Come see it for yourself"
 
 ---
 
