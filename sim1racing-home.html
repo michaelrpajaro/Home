@@ -1,0 +1,592 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     SIM1Racing — Homepage (ONE Squarespace Code Block)
+
+     Replaces the 8 stacked code blocks (hero, ticker, explore, coaching,
+     compete, experience carousel, facility, ready-to-race).
+
+     HOW TO USE
+     1. On the home page, delete the old code blocks.
+     2. Add ONE Code Block in a full-width section with no padding, paste
+        this whole file in, and make sure "Display Source" is OFF.
+
+     Every style is scoped under .s1 so nothing leaks into your header,
+     footer or other pages (the old blocks used global h2/p/div rules that
+     overrode each other).
+═══════════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<div class="s1" id="s1-root">
+
+  <!-- ══════════════ 1. HERO ══════════════ -->
+  <section class="s1-hero">
+    <div class="s1-hero__video" aria-hidden="true">
+      <div class="s1-hero__ratio">
+        <iframe
+          src="https://player.vimeo.com/video/1177535811?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&background=1"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="SIM1 WEBSITE VIDEO" tabindex="-1"></iframe>
+      </div>
+    </div>
+    <div class="s1-hero__shade" aria-hidden="true"></div>
+    <div class="s1-hero__speed" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="s1-hero__content">
+      <div class="s1-status s1-intro" style="--d:.1s">
+        <span class="s1-status__dot"></span>
+        <span id="s1-open-text">Walk-ins welcome daily · 11AM–11PM</span>
+      </div>
+
+      <h1 class="s1-hero__title">
+        <span class="s1-line"><span class="s1-intro" style="--d:.25s">The Largest</span></span>
+        <span class="s1-line"><span class="s1-intro s1-red" style="--d:.4s">Sim-Racing Center</span></span>
+        <span class="s1-line"><span class="s1-intro" style="--d:.55s">in America</span></span>
+      </h1>
+
+      <p class="s1-hero__sub s1-intro" style="--d:.75s">
+        Experience the thrill of professional motorsport simulation in Paramus, NJ.
+        20 full-motion simulators. 8,000 square feet. Every famous track on Earth.
+      </p>
+
+      <div class="s1-ctas s1-ctas--center s1-intro" style="--d:.9s">
+        <a class="s1-btn s1-btn--red" href="https://www.sim1racing.com/daily-rates">
+          <span>Book Now</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="s1-btn s1-btn--ghost" href="/group-packages">Plan an Event</a>
+      </div>
+    </div>
+
+    <a class="s1-scroll" href="#s1-explore" aria-label="Scroll to explore">
+      <span>Explore</span><i></i>
+    </a>
+  </section>
+
+  <!-- ══════════════ 2. TICKER ══════════════ -->
+  <div class="s1-ticker" aria-label="20 motion simulators. 8,000 square feet. Open every day 11AM to 11PM. Walk-ins welcome. Private events. Paramus, NJ.">
+    <div class="s1-ticker__track" aria-hidden="true">
+      <div class="s1-ticker__set">
+        <span>20 Motion Simulators</span><b></b><span>8,000 Square Feet</span><b></b>
+        <span>Open Every Day 11AM–11PM</span><b></b><span>Walk-Ins Welcome</span><b></b>
+        <span>Private Events</span><b></b><span>Paramus, NJ</span><b></b>
+      </div>
+      <div class="s1-ticker__set">
+        <span>20 Motion Simulators</span><b></b><span>8,000 Square Feet</span><b></b>
+        <span>Open Every Day 11AM–11PM</span><b></b><span>Walk-Ins Welcome</span><b></b>
+        <span>Private Events</span><b></b><span>Paramus, NJ</span><b></b>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ STATS ══════════════ -->
+  <section class="s1-statband">
+    <div class="s1-wrap s1-stats">
+      <div class="s1-stat s1-reveal"><strong><span data-count="20">20</span></strong><em>Full-Motion Simulators</em></div>
+      <div class="s1-stat s1-reveal"><strong><span data-count="8000" data-sep>8,000</span></strong><em>Square Feet</em></div>
+      <div class="s1-stat s1-reveal"><strong><span data-count="250">250</span><small>"</small></strong><em>Main Screen</em></div>
+      <div class="s1-stat s1-reveal"><strong><span data-count="250">250</span><small>+</small></strong><em>Parking Spaces</em></div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 3. DRIVE ANYTHING ══════════════ -->
+  <section class="s1-split" id="s1-explore">
+    <div class="s1-split__media s1-wipe">
+      <div class="s1-split__img" style="background-image:url('https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5cffcb41fbc6a94e62da2/1774571517828/CTA06637.jpg?format=1500w')"></div>
+      <div class="s1-badge s1-reveal"><strong>20</strong><span>Full-motion<br>rigs</span></div>
+    </div>
+    <div class="s1-split__copy">
+      <p class="s1-eyebrow s1-reveal">Explore the World</p>
+      <h2 class="s1-h2 s1-reveal">Drive anything.<br><span class="s1-red">Anywhere.</span></h2>
+      <p class="s1-lead s1-reveal">Choose from a massive lineup of cars, from supercars to classic manual icons, and take them around the world's most famous tracks. Whatever you drive in real life, or dream of driving, we've got it here.</p>
+      <ul class="s1-checks s1-reveal">
+        <li>Supercars, GT, open-wheel and classic manuals</li>
+        <li>The world's most iconic circuits, laser-accurate</li>
+        <li>No experience needed — just show up and race</li>
+      </ul>
+      <div class="s1-ctas s1-reveal">
+        <a class="s1-btn s1-btn--red" href="/pricing"><span>Start Racing</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 4. BECOME A BETTER DRIVER ══════════════ -->
+  <section class="s1-split s1-split--rev">
+    <div class="s1-split__media s1-wipe s1-wipe--rev">
+      <div class="s1-split__img" style="background-image:url('https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5d9eb75e41e46e8a1c2fe/1774574061974/POR00331.jpg?format=1500w')"></div>
+      <div class="s1-badge s1-badge--left s1-reveal"><strong>All</strong><span>Skill levels<br>adults &amp; kids</span></div>
+    </div>
+    <div class="s1-split__copy">
+      <p class="s1-eyebrow s1-reveal">Become a Better Driver</p>
+      <h2 class="s1-h2 s1-reveal">Real skills.<br><span class="s1-red">Real results.</span></h2>
+      <p class="s1-lead s1-reveal">The full SIM1Racing experience goes beyond just seat time. Enroll in one of our group class programs and build the real skills needed to compete at the top. With classes designed for every skill level, there's always something to learn and always a new level to reach.</p>
+      <div class="s1-ctas s1-reveal">
+        <a class="s1-btn s1-btn--red" href="/group-classes">Group Coaching</a>
+        <a class="s1-btn s1-btn--ghost" href="/private-coaching">Private Coaching</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 5. COMPETE FOR PRIZES ══════════════ -->
+  <section class="s1-compete">
+    <div class="s1-compete__marquee" aria-hidden="true">
+      <div><span>Time Attack</span><span>Qualifiers</span><span>Championship</span><span>Time Attack</span><span>Qualifiers</span><span>Championship</span></div>
+    </div>
+    <div class="s1-wrap s1-compete__inner">
+      <p class="s1-eyebrow s1-eyebrow--center s1-reveal">Compete for Prizes</p>
+      <h2 class="s1-h2 s1-h2--xl s1-reveal">Prove your <span class="s1-red">skills.</span></h2>
+
+      <div class="s1-timer s1-reveal" aria-hidden="true">
+        <span class="s1-timer__label">Lap</span>
+        <span class="s1-timer__val" id="s1-timer">0:00.000</span>
+        <span class="s1-timer__sectors"><i></i><i></i><i></i></span>
+      </div>
+
+      <p class="s1-lead s1-lead--center s1-reveal">Think you've got what it takes? Put your skills to the test in our monthly Time Attack Championships and weekly qualifier events, with prizes and bragging rights on the line. The competition is always real, and so is the glory.</p>
+      <div class="s1-pills s1-reveal">
+        <span>Monthly Time Attack Championship</span><span>Weekly Qualifiers</span><span>Teams &amp; Leagues</span>
+      </div>
+      <div class="s1-ctas s1-ctas--center s1-reveal">
+        <a class="s1-btn s1-btn--red" href="/portfolio-1-1"><span>View Events</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 6. THE EXPERIENCE ══════════════ -->
+  <section class="s1-section s1-exp">
+    <div class="s1-wrap">
+      <div class="s1-head">
+        <p class="s1-eyebrow s1-reveal">The Experience</p>
+        <h2 class="s1-h2 s1-reveal">More than <span class="s1-red">just racing.</span></h2>
+      </div>
+
+      <div class="s1-grid">
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9zM2 9h20M12 21L8 9l4-6 4 6z"/></svg></div><h3>Membership Perks</h3><p>Exclusive benefits, unlimited racing and VIP lounge access.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div><h3>Race With Friends</h3><p>Drop in anytime and race alongside friends on 20 simulators.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4zM7 6H4a3 3 0 003 4M17 6h3a3 3 0 01-3 4"/></svg></div><h3>Competitions</h3><p>Weekly and monthly qualifiers, championship events, teams and leagues.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c3 2 9 2 12 0v-5"/></svg></div><h3>Classes &amp; Workshops</h3><p>Group programs for adults and kids at every skill level.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4M10 8.5v5l4-2.5z"/></svg></div><h3>Live Streams</h3><p>Watch championship races on the massive 250" main screen.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4zM6 2v3M10 2v3M14 2v3"/></svg></div><h3>Cars and Coffee</h3><p>Daily car meets with 250+ parking spaces for the community.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M4 22V3M4 3h16v10H4M8 3v10M12 3v10M16 3v10M4 8h16"/></svg></div><h3>Watch Parties</h3><p>Join us for Formula 1, NASCAR and major motorsport events.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8v13M3 13h18M12 8S10 3 7.5 4 9 8 12 8zM12 8s2-5 4.5-4S15 8 12 8z"/></svg></div><h3>Special Events</h3><p>Birthday parties, corporate events and team building experiences.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></div><h3>Remote Working Space</h3><p>Work from our facility with high-speed WiFi and comfortable seating.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M7 2v20M4 2v6a3 3 0 006 0V2M17 22V2c-2.5 1-4 4-4 8h4"/></svg></div><h3>BYOB &amp; Food</h3><p>Bring your own food and drinks to enjoy throughout the facility.</p></div>
+        <div class="s1-feat s1-reveal"><div class="s1-feat__icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg></div><h3>Community</h3><p>Join a passionate community of racing enthusiasts and car lovers.</p></div>
+        <a class="s1-feat s1-feat--cta s1-reveal" href="https://www.sim1racing.com/daily-rates"><h3>Your seat is waiting.</h3><p>Grab a rig today. Walk in or book ahead.</p><span class="s1-feat__go">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 7. OUR FACILITY / EVENTS ══════════════ -->
+  <section class="s1-events">
+    <div class="s1-events__bg" aria-hidden="true" style="background-image:url('https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5da63a814f34287109d52/1774574183404/CTA06863.jpg?format=2500w')"></div>
+    <div class="s1-events__shade" aria-hidden="true"></div>
+    <div class="s1-wrap s1-events__inner">
+      <p class="s1-eyebrow s1-eyebrow--light s1-reveal">Our Facility</p>
+      <h2 class="s1-h2 s1-h2--xl s1-reveal">8,000 sq ft of <span class="s1-italic s1-red">pure racing.</span></h2>
+      <p class="s1-lead s1-reveal">SIM1Racing is more than a sim racing center. It's the perfect venue for corporate events, meetings, private parties, team-building experiences and everything in between.</p>
+      <div class="s1-events__types">
+        <div class="s1-reveal"><strong>Corporate Events</strong><span>Team building that people actually want to attend</span></div>
+        <div class="s1-reveal"><strong>Private Parties</strong><span>Birthdays, bachelor parties and celebrations</span></div>
+        <div class="s1-reveal"><strong>Meetings</strong><span>Space to work, then race when the agenda's done</span></div>
+      </div>
+      <div class="s1-ctas s1-reveal">
+        <a class="s1-btn s1-btn--red" href="/group-packages"><span>Plan Your Event</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="s1-btn s1-btn--ghost" href="mailto:info@sim1racing.com">Email info@sim1racing.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ 8. READY TO RACE ══════════════ -->
+  <section class="s1-section s1-visit">
+    <div class="s1-visit__flag" aria-hidden="true"></div>
+    <div class="s1-wrap s1-visit__grid">
+      <div class="s1-visit__info">
+        <p class="s1-eyebrow s1-reveal">Lights Out</p>
+        <h2 class="s1-h2 s1-h2--xl s1-reveal">Ready to <span class="s1-red">race?</span></h2>
+        <dl class="s1-visit__list s1-reveal">
+          <div><dt>Hours</dt><dd>Walk-ins welcome daily<br>11AM – 11PM</dd></div>
+          <div><dt>Address</dt><dd><a href="https://www.google.com/maps/dir/?api=1&destination=145+Route+4+Paramus+NJ+07652" target="_blank" rel="noopener">145 Route 4<br>Paramus, NJ 07652</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:201-988-1329">(201) 988-1329</a></dd></div>
+        </dl>
+        <div class="s1-ctas s1-reveal">
+          <a class="s1-btn s1-btn--red" href="https://www.sim1racing.com/daily-rates"><span>Book Now</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="s1-btn s1-btn--ghost" href="tel:201-988-1329">Call Us</a>
+        </div>
+      </div>
+      <div class="s1-visit__map s1-reveal">
+        <iframe title="Map to SIM1Racing, 145 Route 4, Paramus NJ" loading="lazy"
+          src="https://maps.google.com/maps?q=145%20Route%204%2C%20Paramus%2C%20NJ%2007652&z=15&output=embed"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ MOBILE STICKY BAR ══════════════ -->
+  <div class="s1-sticky" id="s1-sticky">
+    <a class="s1-sticky__call" href="tel:201-988-1329" aria-label="Call SIM1Racing">
+      <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg>
+    </a>
+    <a class="s1-btn s1-btn--red s1-btn--sm" href="https://www.sim1racing.com/daily-rates">Book Now</a>
+  </div>
+</div>
+
+<style>
+/* ───────── Base / tokens (scoped to .s1) ───────── */
+.s1{
+  --red:#EF4444; --red-dk:#DC2626; --ink:#000; --ink-2:#0A0A0B; --ink-3:#141417;
+  --line:rgba(255,255,255,.1); --muted:#A1A1AA;
+  --cond:'Barlow Condensed',sans-serif; --body:'Barlow',sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  background:var(--ink); color:#F4F4F5; font-family:var(--body);
+  font-size:17px; line-height:1.6; overflow:hidden; position:relative;
+  -webkit-font-smoothing:antialiased;
+}
+.s1 *,.s1 *::before,.s1 *::after{box-sizing:border-box}
+.s1 :where(h1,h2,h3,p,ul,dl,dd){margin:0;padding:0}
+.s1 :where(a){color:inherit;text-decoration:none}
+.s1 svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.s1-wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.s1-section{padding:120px 0;position:relative}
+.s1-red{color:var(--red)}
+.s1-italic{font-style:italic}
+.s1-eyebrow{font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.s1-eyebrow::before{content:"";width:34px;height:3px;background:currentColor;transform:skewX(-30deg)}
+.s1-eyebrow--light{color:#fff}
+.s1-eyebrow--center{justify-content:center}
+.s1-h2{font-family:var(--cond);font-weight:900;font-size:clamp(42px,5.4vw,76px);line-height:.96;text-transform:uppercase;color:#fff}
+.s1-h2--xl{font-size:clamp(50px,8vw,120px);line-height:.9}
+.s1-lead{color:#C9C9CF;font-size:clamp(17px,1.35vw,19px);line-height:1.75;max-width:580px;margin-top:24px}
+.s1-lead--center{margin-left:auto;margin-right:auto;text-align:center;max-width:760px}
+.s1-head{max-width:760px;margin-bottom:56px}
+
+/* ───────── Buttons ───────── */
+.s1-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.s1-ctas--center{justify-content:center}
+.s1-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--cond);font-weight:800;font-size:19px;letter-spacing:.12em;text-transform:uppercase;line-height:1.1;
+  padding:19px 38px;border-radius:6px;overflow:hidden;isolation:isolate;cursor:pointer;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s,color .3s,border-color .3s}
+.s1-btn svg{font-size:20px;transition:transform .3s var(--ease)}
+.s1-btn:hover svg{transform:translateX(5px)}
+.s1-btn--sm{padding:14px 26px;font-size:17px}
+.s1-btn--red{background:var(--red);color:#fff;box-shadow:0 10px 30px -8px rgba(239,68,68,.6)}
+.s1-btn--red::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);
+  transform:translateX(-120%);animation:s1-shine 4s ease-in-out infinite}
+.s1-btn--red:hover{background:var(--red-dk);transform:translateY(-3px);box-shadow:0 16px 36px -8px rgba(239,68,68,.8)}
+.s1-btn--ghost{border:2px solid rgba(255,255,255,.75);color:#fff;background:rgba(255,255,255,.05);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.s1-btn--ghost:hover{background:#fff;color:#000;border-color:#fff;transform:translateY(-3px)}
+@keyframes s1-shine{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+
+/* ───────── 1. Hero ───────── */
+.s1-hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
+.s1-hero__video{position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;transform:translate(-50%,-50%) scale(1.1);
+  pointer-events:none;filter:brightness(.5) saturate(1.1);animation:s1-zoom 16s ease-out forwards}
+.s1-hero__ratio{padding:56.25% 0 0;position:relative;min-height:100vh}
+.s1-hero__ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@keyframes s1-zoom{to{transform:translate(-50%,-50%) scale(1)}}
+.s1-hero__shade{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 75%),
+             linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 30%,transparent 60%,#000 100%)}
+.s1-hero__speed{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.s1-hero__speed i{position:absolute;left:-30%;height:2px;width:22%;background:linear-gradient(90deg,transparent,rgba(239,68,68,.9));opacity:0;animation:s1-streak 3.2s linear infinite}
+.s1-hero__speed i:nth-child(1){top:18%;animation-delay:.2s}
+.s1-hero__speed i:nth-child(2){top:34%;animation-delay:1.6s;width:14%}
+.s1-hero__speed i:nth-child(3){top:52%;animation-delay:.9s}
+.s1-hero__speed i:nth-child(4){top:68%;animation-delay:2.4s;width:30%}
+.s1-hero__speed i:nth-child(5){top:80%;animation-delay:1.2s;width:12%}
+.s1-hero__speed i:nth-child(6){top:44%;animation-delay:2.9s;width:18%}
+@keyframes s1-streak{0%{transform:translateX(0);opacity:0}10%{opacity:.8}60%{opacity:.5}100%{transform:translateX(620%);opacity:0}}
+.s1-hero__content{position:relative;z-index:2;text-align:center;padding:120px 24px 150px;max-width:1300px}
+.s1-status{display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border:1px solid rgba(255,255,255,.22);border-radius:99px;
+  background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:30px}
+.s1-status__dot{width:9px;height:9px;border-radius:50%;background:#22C55E;animation:s1-pulse 2s infinite}
+.s1-status.is-closed .s1-status__dot{background:var(--red);animation:none}
+@keyframes s1-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.s1-hero__title{font-family:var(--cond);font-weight:900;font-style:italic;text-transform:uppercase;color:#fff;
+  font-size:clamp(46px,9.5vw,140px);line-height:.9;text-shadow:0 6px 40px rgba(0,0,0,.5)}
+.s1-line{display:block;overflow:hidden;padding:0 .08em .04em}
+.s1-line>span{display:inline-block}
+.s1-hero__sub{font-size:clamp(17px,1.6vw,22px);color:#E4E4E7;max-width:720px;margin:28px auto 0}
+.s1-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-family:var(--cond);font-weight:700;letter-spacing:.3em;font-size:13px;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.s1-scroll i{width:2px;height:46px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.s1-scroll i::after{content:"";position:absolute;left:0;top:-50%;width:100%;height:50%;background:var(--red);animation:s1-drop 1.8s var(--ease) infinite}
+@keyframes s1-drop{to{top:100%}}
+.s1-js .s1-intro{opacity:0;transform:translateY(40px);animation:s1-in .9s var(--ease) forwards;animation-delay:var(--d,0s)}
+.s1-js .s1-line>.s1-intro{transform:translateY(105%)}
+@keyframes s1-in{to{opacity:1;transform:none}}
+
+/* ───────── 2. Ticker ───────── */
+.s1-ticker{background:var(--red);overflow:hidden;position:relative;z-index:3;transform:skewY(-1.5deg);margin-top:-28px;padding:22px 0;box-shadow:0 20px 50px -20px rgba(239,68,68,.5)}
+.s1-ticker__track{display:flex;width:max-content;animation:s1-marquee 30s linear infinite}
+.s1-ticker:hover .s1-ticker__track{animation-play-state:paused}
+.s1-ticker__set{display:flex;align-items:center;flex-shrink:0;transform:skewY(1.5deg)}
+.s1-ticker span{font-family:var(--cond);font-weight:900;font-style:italic;font-size:clamp(20px,2.3vw,30px);letter-spacing:.08em;text-transform:uppercase;color:#fff;white-space:nowrap;padding:0 28px}
+.s1-ticker b{width:11px;height:11px;background:#000;transform:rotate(45deg);flex-shrink:0}
+@keyframes s1-marquee{to{transform:translateX(-50%)}}
+
+/* ───────── Scroll reveal ───────── */
+.s1-js .s1-reveal{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--rd,0s)}
+.s1-js .s1-reveal.is-in{opacity:1;transform:none}
+
+/* ───────── Stats ───────── */
+.s1-statband{padding:90px 0 30px}
+.s1-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s1-stat{padding:40px 16px;text-align:center}
+.s1-stat+.s1-stat{border-left:1px solid var(--line)}
+.s1-stat strong{display:block;font-family:var(--cond);font-weight:900;font-style:italic;font-size:clamp(48px,6vw,86px);line-height:1;color:#fff}
+.s1-stat strong small{font-size:.55em;color:var(--red);margin-left:2px}
+.s1-stat em{display:block;font-style:normal;font-family:var(--cond);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-size:14px;margin-top:10px}
+.s1-stat:nth-child(2){--rd:.1s}.s1-stat:nth-child(3){--rd:.2s}.s1-stat:nth-child(4){--rd:.3s}
+
+/* ───────── 3 & 4. Image / copy splits ───────── */
+.s1-split{display:grid;grid-template-columns:1fr 1fr;min-height:92vh;align-items:stretch}
+.s1-split__copy{display:flex;flex-direction:column;justify-content:center;padding:110px clamp(24px,6vw,96px)}
+.s1-split--rev .s1-split__media{order:2}
+.s1-split__media{position:relative;overflow:hidden;min-height:520px}
+.s1-split__img{position:absolute;inset:-6% 0;background-size:cover;background-position:center;will-change:transform}
+.s1-split__media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 60%,rgba(0,0,0,.65))}
+.s1-split--rev .s1-split__media::after{background:linear-gradient(270deg,transparent 60%,rgba(0,0,0,.65))}
+/* image wipe-in */
+.s1-js .s1-wipe{clip-path:inset(0 100% 0 0);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
+.s1-js .s1-wipe--rev{clip-path:inset(0 0 0 100%)}
+.s1-js .s1-wipe.is-in{clip-path:inset(0 0 0 0)}
+.s1-js .s1-wipe .s1-split__img{scale:1.25;transition:scale 2s var(--ease)}
+.s1-js .s1-wipe.is-in .s1-split__img{scale:1}
+.s1-badge{position:absolute;right:28px;bottom:28px;z-index:2;display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:10px;
+  background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);--rd:.9s}
+.s1-badge--left{right:auto;left:28px}
+.s1-badge strong{font-family:var(--cond);font-weight:900;font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.s1-badge span{font-family:var(--cond);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px;line-height:1.3;color:#fff}
+.s1-checks{list-style:none;margin-top:28px;display:grid;gap:14px}
+.s1-checks li{position:relative;padding-left:38px;color:#E4E4E7}
+.s1-checks li::before{content:"";position:absolute;left:0;top:7px;width:22px;height:12px;
+  background:linear-gradient(90deg,var(--red) 0 30%,transparent 30% 40%,var(--red) 40% 68%,transparent 68% 78%,var(--red) 78%);transform:skewX(-25deg)}
+
+/* ───────── 5. Compete ───────── */
+.s1-compete{position:relative;padding:140px 0;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#2a0b0b 0%,#000 65%)}
+.s1-compete__marquee{position:absolute;top:50%;left:0;transform:translateY(-50%) rotate(-4deg);width:100%;pointer-events:none;opacity:.07}
+.s1-compete__marquee div{display:flex;width:max-content;animation:s1-marquee 40s linear infinite}
+.s1-compete__marquee span{font-family:var(--cond);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(120px,16vw,240px);line-height:1;padding-right:60px;color:transparent;-webkit-text-stroke:2px #fff;white-space:nowrap}
+.s1-compete__inner{position:relative;text-align:center}
+.s1-timer{display:inline-flex;align-items:center;gap:18px;margin-top:40px;padding:14px 26px;border-radius:10px;background:rgba(0,0,0,.6);border:1px solid rgba(239,68,68,.4);box-shadow:0 0 60px -20px rgba(239,68,68,.6)}
+.s1-timer__label{font-family:var(--cond);font-weight:800;letter-spacing:.24em;text-transform:uppercase;font-size:14px;color:var(--muted)}
+.s1-timer__val{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;font-size:clamp(28px,3.4vw,42px);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.02em;min-width:7.2ch;text-align:left}
+.s1-timer__sectors{display:flex;gap:4px}
+.s1-timer__sectors i{width:26px;height:8px;border-radius:2px;background:#333;transition:background .3s}
+.s1-timer__sectors i.is-g{background:#22C55E}.s1-timer__sectors i.is-p{background:#A855F7}
+.s1-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.s1-pills span{border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:8px 18px;font-family:var(--cond);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:15px;color:#fff;background:rgba(255,255,255,.04)}
+
+/* ───────── 6. Experience grid ───────── */
+.s1-exp{background:linear-gradient(180deg,#000 0%,var(--ink-2) 100%)}
+.s1-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.s1-feat{position:relative;padding:30px 26px;background:var(--ink-3);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  transition:transform .45s var(--ease),border-color .45s,box-shadow .45s}
+.s1-feat::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(239,68,68,.16),transparent 45%);opacity:0;transition:opacity .4s}
+.s1-feat:hover{transform:translateY(-6px);border-color:rgba(239,68,68,.55);box-shadow:0 26px 50px -28px rgba(239,68,68,.5)}
+.s1-feat:hover::before{opacity:1}
+.s1-feat>*{position:relative}
+.s1-feat__icon{width:52px;height:52px;border-radius:10px;display:grid;place-items:center;background:rgba(239,68,68,.12);color:var(--red);font-size:24px;margin-bottom:22px;transition:background .4s,color .4s,transform .4s var(--ease)}
+.s1-feat:hover .s1-feat__icon{background:var(--red);color:#fff;transform:rotate(-8deg) scale(1.06)}
+.s1-feat h3{font-family:var(--cond);font-weight:800;font-size:24px;line-height:1.05;text-transform:uppercase;color:#fff;margin-bottom:10px}
+.s1-feat p{color:var(--muted);font-size:15.5px;line-height:1.55}
+.s1-feat--cta{background:linear-gradient(145deg,var(--red) 0%,#991B1B 100%);border-color:transparent;display:flex;flex-direction:column}
+.s1-feat--cta h3{font-size:30px}
+.s1-feat--cta p{color:rgba(255,255,255,.88);flex:1}
+.s1-feat__go{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:var(--cond);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-size:17px}
+.s1-feat--cta:hover{box-shadow:0 26px 50px -20px rgba(239,68,68,.8);border-color:transparent}
+.s1-feat--cta:hover .s1-feat__go svg{transform:translateX(6px)}
+.s1-feat__go svg{transition:transform .3s var(--ease)}
+.s1-grid .s1-feat:nth-child(4n+2){--rd:.07s}.s1-grid .s1-feat:nth-child(4n+3){--rd:.14s}.s1-grid .s1-feat:nth-child(4n+4){--rd:.21s}
+
+/* ───────── 7. Facility / events ───────── */
+.s1-events{position:relative;padding:150px 0;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.s1-events__bg{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
+.s1-events__shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.25) 100%),linear-gradient(0deg,#000 0%,transparent 25%,transparent 80%,#000 100%)}
+.s1-events__inner{position:relative;z-index:2;width:100%}
+.s1-events__types{display:grid;grid-template-columns:repeat(3,minmax(0,240px));gap:14px;margin-top:36px}
+.s1-events__types div{padding:18px 20px;border-left:3px solid var(--red);background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:0 8px 8px 0}
+.s1-events__types div:nth-child(2){--rd:.1s}.s1-events__types div:nth-child(3){--rd:.2s}
+.s1-events__types strong{display:block;font-family:var(--cond);font-weight:800;font-size:21px;text-transform:uppercase;color:#fff;letter-spacing:.04em}
+.s1-events__types span{display:block;color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:4px}
+
+/* ───────── 8. Visit ───────── */
+.s1-visit{overflow:hidden}
+.s1-visit__flag{position:absolute;top:0;left:0;right:0;height:24px;opacity:.9;
+  background:conic-gradient(#fff 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/24px 24px}
+.s1-visit__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:stretch}
+.s1-visit__list{margin-top:36px;border-top:1px solid var(--line)}
+.s1-visit__list>div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.s1-visit__list dt{font-family:var(--cond);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-size:15px;padding-top:3px}
+.s1-visit__list dd{color:#E4E4E7;font-size:19px;line-height:1.45}
+.s1-visit__list a{border-bottom:1px solid rgba(255,255,255,.25);transition:color .3s,border-color .3s}
+.s1-visit__list a:hover{color:var(--red);border-color:var(--red)}
+.s1-visit__map{border-radius:10px;overflow:hidden;min-height:460px;border:1px solid var(--line);position:relative;background:var(--ink-3)}
+.s1-visit__map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+
+/* ───────── Sticky mobile bar ───────── */
+.s1-sticky{display:none}
+
+/* ───────── Responsive ───────── */
+@media (max-width:1024px){
+  .s1-grid{grid-template-columns:repeat(2,1fr)}
+  .s1-split{grid-template-columns:1fr;min-height:0}
+  .s1-split--rev .s1-split__media{order:0}
+  .s1-split__media{min-height:62vw}
+  .s1-split__media::after,.s1-split--rev .s1-split__media::after{background:linear-gradient(180deg,transparent 55%,#000)}
+  .s1-split__copy{padding:56px 24px 90px}
+  .s1-visit__grid{grid-template-columns:1fr;gap:48px}
+  .s1-events__types{grid-template-columns:1fr;max-width:460px}
+}
+@media (max-width:768px){
+  .s1{font-size:16px}
+  .s1-section{padding:84px 0}
+  .s1-wrap{padding:0 18px}
+  .s1-hero__content{padding:110px 18px 140px}
+  .s1-ctas .s1-btn{flex:1 1 100%}
+  .s1-status{font-size:12.5px;letter-spacing:.1em}
+  .s1-statband{padding:70px 0 10px}
+  .s1-stats{grid-template-columns:repeat(2,1fr)}
+  .s1-stat:nth-child(3){border-left:0}
+  .s1-stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .s1-split__copy{padding:44px 18px 80px}
+  .s1-split__media{min-height:80vw}
+  .s1-badge{right:16px;bottom:16px;padding:12px 16px}
+  .s1-badge--left{left:16px;right:auto}
+  .s1-badge strong{font-size:36px}
+  .s1-compete{padding:100px 0}
+  .s1-timer{gap:12px;padding:12px 18px}
+  .s1-timer__sectors i{width:16px}
+  .s1-grid{gap:10px}
+  .s1-feat{padding:20px 16px}
+  .s1-feat__icon{width:42px;height:42px;font-size:20px;margin-bottom:14px}
+  .s1-feat h3{font-size:19px}
+  .s1-feat p{font-size:14px}
+  .s1-feat--cta h3{font-size:22px}
+  .s1-events{padding:100px 0;min-height:0}
+  .s1-events__shade{background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.85)),linear-gradient(0deg,#000 0%,transparent 20%,transparent 85%,#000 100%)}
+  .s1-visit__list>div{grid-template-columns:90px 1fr}
+  .s1-visit__map{min-height:320px}
+  .s1-ticker__track{animation-duration:20s}
+  .s1-sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:999;align-items:center;gap:10px;padding:8px;
+    background:rgba(12,12,14,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:12px;
+    transform:translateY(150%);transition:transform .45s var(--ease);box-shadow:0 20px 40px rgba(0,0,0,.5)}
+  .s1-sticky.is-on{transform:none}
+  .s1-sticky .s1-btn{flex:1}
+  .s1-sticky__call{width:52px;height:50px;display:grid;place-items:center;border-radius:6px;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .s1 *,.s1 *::before,.s1 *::after{animation:none!important;transition:none!important}
+  .s1-js .s1-intro,.s1-js .s1-reveal{opacity:1!important;transform:none!important}
+  .s1-js .s1-wipe{clip-path:none!important}
+  .s1-js .s1-wipe .s1-split__img{scale:1}
+}
+</style>
+
+<script>
+(function(){
+  var root = document.getElementById('s1-root');
+  if (!root) return;
+  root.classList.add('s1-js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Live open/closed badge (Eastern Time, 11AM–11PM)
+  try {
+    var h = parseInt(new Intl.DateTimeFormat('en-US',{hour:'numeric',hourCycle:'h23',timeZone:'America/New_York'}).format(new Date()),10);
+    var badge = root.querySelector('.s1-status'), txt = document.getElementById('s1-open-text');
+    if (h >= 11 && h < 23) txt.textContent = 'Open now · Walk-ins welcome until 11PM';
+    else { badge.classList.add('is-closed'); txt.textContent = 'Opens 11AM daily · Book ahead'; }
+  } catch(e){}
+
+  // Explore cue
+  var cue = root.querySelector('.s1-scroll');
+  if (cue) cue.addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('s1-explore').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  // Count-up numbers
+  function countUp(el){
+    var end = +el.getAttribute('data-count'), sep = el.hasAttribute('data-sep'), t0 = null, dur = 1600;
+    function fmt(n){ return sep ? n.toLocaleString('en-US') : String(n); }
+    if (reduce) return;
+    function step(t){
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      el.textContent = fmt(Math.round(end * (1 - Math.pow(1 - p, 4))));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    el.textContent = fmt(0);
+    requestAnimationFrame(step);
+  }
+
+  // Lap timer: counts a lap, lights sectors, then resets
+  var timerEl = document.getElementById('s1-timer'), timerOn = false;
+  function runTimer(){
+    if (timerOn || reduce || !timerEl) return;
+    timerOn = true;
+    var sectors = root.querySelectorAll('.s1-timer__sectors i'), lap = 6200, start = null;
+    function frame(t){
+      if (!start) start = t;
+      var ms = (t - start) % (lap + 1600), shown = Math.min(ms, lap) * 14.7; // ~1:31 lap shown in ~6s
+      var m = Math.floor(shown / 60000), s = Math.floor(shown / 1000) % 60, x = Math.floor(shown % 1000);
+      timerEl.textContent = m + ':' + (s < 10 ? '0' : '') + s + '.' + ('00' + x).slice(-3);
+      for (var i = 0; i < sectors.length; i++) {
+        var done = ms >= lap * (i + 1) / 3;
+        sectors[i].className = done ? (i === 1 ? 'is-p' : 'is-g') : '';
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // Scroll reveals
+  var targets = root.querySelectorAll('.s1-reveal, .s1-wipe, [data-count], .s1-timer');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        if (el.hasAttribute('data-count')) countUp(el);
+        else { el.classList.add('is-in'); if (el.classList.contains('s1-timer')) runTimer(); }
+        io.unobserve(el);
+      });
+    }, {threshold: 0.15, rootMargin: '0px 0px -40px 0px'});
+    targets.forEach(function(el){ io.observe(el); });
+  } else {
+    targets.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  // Spotlight follows cursor on experience cards
+  root.querySelectorAll('.s1-feat').forEach(function(c){
+    c.addEventListener('pointermove', function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Parallax photos + sticky mobile bar
+  var hero = root.querySelector('.s1-hero'), sticky = document.getElementById('s1-sticky'),
+      para = [].slice.call(root.querySelectorAll('.s1-split__img, .s1-events__bg')), ticking = false;
+  function onScroll(){
+    ticking = false;
+    var vh = window.innerHeight, rb = root.getBoundingClientRect();
+    if (sticky) sticky.classList.toggle('is-on', hero.getBoundingClientRect().bottom < 0 && rb.bottom > vh);
+    if (reduce) return;
+    para.forEach(function(img){
+      var b = img.parentNode.getBoundingClientRect();
+      if (b.bottom < 0 || b.top > vh) return;
+      var off = (b.top + b.height / 2 - vh / 2) * -0.08;
+      img.style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
+    });
+  }
+  window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  onScroll();
+})();
+</script>
