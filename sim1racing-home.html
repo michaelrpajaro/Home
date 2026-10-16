@@ -321,8 +321,12 @@
 .s1-line{display:block;overflow:hidden;padding:.1em .25em}
 .s1-line+.s1-line{margin-top:-.2em}
 .s1-line>span{display:inline-block}
-.s1-hero__title .s1-red{-webkit-text-stroke:3px #000;paint-order:stroke fill}
+.s1-hero__title .s1-line>span{-webkit-text-stroke:6px #000;paint-order:stroke fill}
 .s1-hero__sub{font-size:clamp(17px,1.75vw,28px);color:#E4E4E7;max-width:960px;margin:28px auto 0}
+.s1-hero .s1-btn--ghost{background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+.s1-hero .s1-btn--ghost:hover{background:#fff}
+/* once an intro animation finishes, drop it: a lingering animation stops backdrop blur from working */
+.s1-js .s1-intro.is-done,.s1-js .s1-line>.s1-intro.is-done{animation:none;opacity:1;transform:none}
 @media (min-width:1025px){
   .s1-hero__content{padding:96px 32px 120px}
   .s1-hero__sub2{display:block}
@@ -533,6 +537,10 @@
       document.head.appendChild(api);
     }
   })();
+
+  root.querySelectorAll('.s1-intro').forEach(function(el){
+    el.addEventListener('animationend', function(){ el.classList.add('is-done'); });
+  });
 
   // Explore cue
   var cue = root.querySelector('.s1-scroll');
