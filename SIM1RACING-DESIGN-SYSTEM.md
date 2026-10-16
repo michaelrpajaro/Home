@@ -81,11 +81,13 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 | **Hero headline** | Barlow Condensed 900 *italic*, UPPERCASE, `line-height:.9`, `letter-spacing:.03em`, 4.5px black outline (`-webkit-text-stroke:9px #000; paint-order:stroke fill`). Key phrase in red. Each line is its own block that never wraps; size it to the block width (section 5). |
 | **Section heading (`.s1-h2`)** | Barlow Condensed 900 upright, UPPERCASE, `clamp(42px,5.4vw,76px)`, `line-height:.96`, white, with the second phrase in red: `More than <span class="s1-red">just racing</span>` |
 | **XL heading (`.s1-h2--xl`)** | Same, `clamp(50px,8vw,120px)`, `line-height:.9`. Often two lines, with the red second line in *italic*: `Your next party<br><span class="s1-italic s1-red">starts here</span>` |
-| **Eyebrow / label (`.s1-eyebrow`)** | Barlow Condensed 700, 16px, `letter-spacing:.28em`, UPPERCASE, red, preceded by a 34×3px slanted bar (`skewX(-30deg)`). Sits above every section heading. |
+| **Eyebrow / label (`.s1-eyebrow`)** | Barlow Condensed **800**, `clamp(17px,1.3vw,20px)`, `letter-spacing:.2em`, UPPERCASE, **white**, preceded by a 38×4px slanted **red** bar (`skewX(-30deg)`). Sits above every section heading. |
 | **Lead paragraph (`.s1-lead`)** | Barlow 400, `clamp(17px,1.35vw,19px)`, `line-height:1.75`, `#C9C9CF`, max-width ~580px. |
-| **Small caps labels** (stat labels, list keys) | Barlow Condensed 700–800, 14–20px, `letter-spacing:.2em`, UPPERCASE. |
+| **Small caps labels** (stat labels, list keys like Hours / Address / Phone) | Barlow Condensed **800**, **16–20px** (list keys 18px), `letter-spacing:.14–.2em`, UPPERCASE, **white or `#D4D4D8`**. |
 | **Big numbers** | Barlow Condensed 900 *italic*, up to 150px, white; units like `"` or `+` in red at 50% size. |
 | **Outlined numbers** (01, 02…) | Barlow Condensed 900 italic, transparent fill, `-webkit-text-stroke:1.5px var(--red)`. |
+
+**Readability rule: never use red for small text.** Thin, small red text on black is hard to read, and the owner flagged it. Red is only for large headline words, buttons, bars, underlines, outlined numbers and big stat accents. Any text under about 24px (eyebrows, labels, list keys, small links) is **white or light gray, weight 800**, with red only as an accent shape (a bar before it or an underline beneath it).
 
 **No periods at the end of headings.** The owner dislikes the "Title." style. Write "Come see it for yourself", not "Come see it for yourself." The same goes for eyebrows, column titles and button labels.
 
@@ -114,8 +116,8 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 .s1 :where(a){color:inherit;text-decoration:none}
 .s1 svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .s1-red{color:var(--red)} .s1-italic{font-style:italic}
-.s1-eyebrow{font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.s1-eyebrow::before{content:"";width:34px;height:3px;background:currentColor;transform:skewX(-30deg)}
+.s1-eyebrow{font-family:var(--cond);font-weight:800;font-size:clamp(17px,1.3vw,20px);letter-spacing:.2em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.s1-eyebrow::before{content:"";width:38px;height:4px;background:var(--red);transform:skewX(-30deg)}
 .s1-eyebrow--light{color:#fff} .s1-eyebrow--center{justify-content:center}
 .s1-h2{font-family:var(--cond);font-weight:900;font-size:clamp(42px,5.4vw,76px);line-height:.96;text-transform:uppercase;color:#fff}
 .s1-h2--xl{font-size:clamp(50px,8vw,120px);line-height:.9}
@@ -159,7 +161,7 @@ Arrow icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l
 Four columns. Huge italic numbers **count up** from 0 with an ease-out over 1.6s when scrolled into view. A 36×4px slanted red bar sits above each label, and there are faint vertical dividers between columns. Mobile: 2×2.
 
 ### Three themed columns (used for "More than just racing")
-Three columns separated by hairlines. Each has an outlined red number (01/02/03) plus a big italic uppercase title on one line, a 3px red underline, then a list of items: a bold condensed uppercase title (22–30px) with a one-line muted description. Hover: the title turns red and nudges 6px right. Optional red text links under an item (`View events →`). The columns fade up one after another (0.12s stagger).
+Three columns separated by hairlines. Each has an outlined red number (01/02/03) plus a big italic uppercase title on one line, a 3px red underline, then a list of items: a bold condensed uppercase title (22–30px) with a one-line muted description. Hover: the title turns red and nudges 6px right. Optional small links under an item (`View events →`): white, 800 weight, 16px, with a 2px red underline that turns red on hover. The columns fade up one after another (0.12s stagger).
 
 ### Photo gallery
 A grid with one large photo on the left (spans two rows, ~0.88:1) and two wide photos stacked on the right (**2.5:1**). 16px gaps, 12px radius. Each photo reveals with a **black curtain** sliding off (staggered), its image settling from `scale:1.15` to 1. Hover: 1.06 zoom plus a red 2px inner outline.
@@ -173,9 +175,9 @@ A background photo with a left-to-right black gradient for legibility, a slow pa
 
 ### Visit / contact block
 Full-width three-column layout (no max width, side padding `clamp(20px,1.6vw,32px)`, generous column gaps `clamp(40px,4.2vw,88px)`):
-- **Left (`minmax(360px,.8fr)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (red small-caps keys Hours / Address / Phone, with underlined links that turn red on hover), and two buttons kept on one row (padding 18×28px).
+- **Left (`max-content`, items offset with `margin-left:clamp(0px,2.4vw,48px)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (bold white 18px keys Hours / Address / Phone; values as underlined links that turn red on hover), and two buttons kept on one row (padding 18×28px).
 - **Middle (`1fr`):** a grayscale-inverted Google Map embed.
-- **Right (`1.25fr`):** an exterior photo. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan), and a frosted "250+ PARKING SPACES" tag fades in 1s after the reveal.
+- **Right (`1.25fr`):** an exterior photo. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan).
 - **Alignment rule:** the map and photo run from the **top of the heading** to the **bottom of the buttons**. Do this with `.s1-visit__info{display:contents}` and grid rows: eyebrow row 1, heading row 2, list row 3, buttons row 4; map and photo `grid-row:2/5`. The boxes come out roughly square (about 1–1.15:1). Upload the photo at about **2000×1800** with the subject centered.
 - A checkered-flag strip runs along the top edge. Below 1024px everything stacks (map 1:1, photo 1.3:1).
 
