@@ -172,11 +172,12 @@ Small dark glass panels: `rgba(0,0,0,.45)`, blur, a 3px red left border, a conde
 A background photo with a left-to-right black gradient for legibility, a slow parallax as the page scrolls, and an XL two-line heading (red italic second line), lead paragraph, cards and two buttons.
 
 ### Visit / contact block
-Full-width (`.s1-wrap--wide`) three-column layout, vertically centered:
-- **Left (`minmax(380px,.95fr)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (red small-caps keys Hours / Address / Phone, with underlined links that turn red on hover), and buttons.
-- **Middle (`1fr`):** a **square** (`aspect-ratio:1/1`) grayscale-inverted Google Map embed.
-- **Right (`1.3fr`):** an exterior photo at `aspect-ratio:1.3/1`, so it matches the map's height. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan), and a frosted "250+ PARKING SPACES" tag fades in 1s after the reveal. Upload at about **2000×1540**.
-- A checkered-flag strip (24px conic-gradient squares) runs along the top edge. Below 1024px the three columns stack.
+Full-width three-column layout (`.s1-wrap--wide`, side padding `clamp(24px,2.8vw,56px)`):
+- **Left (`minmax(360px,.8fr)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (red small-caps keys Hours / Address / Phone, with underlined links that turn red on hover), and two buttons kept on one row (padding 18×28px).
+- **Middle (`1fr`):** a grayscale-inverted Google Map embed.
+- **Right (`1.25fr`):** an exterior photo. It reveals with a curtain, then a slow Ken Burns drift (24s alternating `scale(1)→scale(1.08)` with a slight pan), and a frosted "250+ PARKING SPACES" tag fades in 1s after the reveal.
+- **Alignment rule:** the map and photo run from the **top of the heading** to the **bottom of the buttons**. Do this with `.s1-visit__info{display:contents}` and grid rows: eyebrow row 1, heading row 2, list row 3, buttons row 4; map and photo `grid-row:2/5`. The boxes come out roughly square (about 1–1.15:1). Upload the photo at about **2000×1800** with the subject centered.
+- A checkered-flag strip runs along the top edge. Below 1024px everything stacks (map 1:1, photo 1.3:1).
 
 ### Mobile sticky bar (phones only)
 Appears after scrolling past the hero: a frosted dark bar pinned to the bottom with a phone-icon button and a full-width red Book Now button.
