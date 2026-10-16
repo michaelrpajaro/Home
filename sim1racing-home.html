@@ -75,6 +75,23 @@
     </div>
   </section>
 
+  <!-- ══════════════ PHOTO GALLERY ══════════════
+       To add a photo: copy one <figure> line below and paste in the new image link
+       (in Squarespace, open the image and copy its address). The first photo is the large one. -->
+  <section class="s1-gallery">
+    <div class="s1-wrap s1-wrap--wide">
+      <div class="s1-gallery__head">
+        <p class="s1-eyebrow s1-reveal">Inside SIM1Racing</p>
+        <h2 class="s1-h2 s1-reveal">Take a look <span class="s1-red">inside.</span></h2>
+      </div>
+      <div class="s1-shots">
+        <figure class="s1-shot s1-curtain"><img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5cffcb41fbc6a94e62da2/1774571517828/CTA06637.jpg" alt="SIM1Racing motion simulators" loading="lazy"></figure>
+        <figure class="s1-shot s1-curtain"><img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5d9eb75e41e46e8a1c2fe/1774574061974/POR00331.jpg" alt="Drivers at SIM1Racing" loading="lazy"></figure>
+        <figure class="s1-shot s1-curtain"><img src="https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5da63a814f34287109d52/1774574183404/CTA06863.jpg" alt="Inside the SIM1Racing venue" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════════ 3. THE EXPERIENCE (three themed columns) ══════════════ -->
   <section class="s1-section s1-exp s1-exp--cols" id="s1-explore">
     <div class="s1-wrap s1-wrap--wide">
@@ -144,8 +161,8 @@
     <div class="s1-visit__flag" aria-hidden="true"></div>
     <div class="s1-wrap s1-visit__grid">
       <div class="s1-visit__info">
-        <p class="s1-eyebrow s1-reveal">Lights Out</p>
-        <h2 class="s1-h2 s1-h2--xl s1-reveal">Ready to <span class="s1-red">race?</span></h2>
+        <p class="s1-eyebrow s1-reveal">Visit Us</p>
+        <h2 class="s1-h2 s1-visit__title s1-reveal">Come see it<br><span class="s1-red">for yourself.</span></h2>
         <dl class="s1-visit__list s1-reveal">
           <div><dt>Hours</dt><dd>Walk-ins welcome daily<br>11AM – 11PM</dd></div>
           <div><dt>Address</dt><dd><a href="https://www.google.com/maps/dir/?api=1&destination=145+Route+4+Paramus+NJ+07652" target="_blank" rel="noopener">145 Route 4<br>Paramus, NJ 07652</a></dd></div>
@@ -300,6 +317,24 @@
 .s1-stat em::before{content:"";display:block;width:36px;height:4px;background:var(--red);margin:0 auto 16px;transform:skewX(-30deg)}
 .s1-stat:nth-child(2){--rd:.1s}.s1-stat:nth-child(3){--rd:.2s}.s1-stat:nth-child(4){--rd:.3s}
 
+/* ───────── Photo gallery ───────── */
+.s1-gallery{padding:60px 0 20px}
+.s1-gallery__head{margin-bottom:40px}
+.s1-shots{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-auto-rows:clamp(220px,21vw,380px);gap:16px}
+.s1-shot{position:relative;margin:0;overflow:hidden;border-radius:12px;background:var(--ink-3)}
+.s1-shot:nth-child(1){grid-row:span 2}
+.s1-shot:nth-child(2),.s1-shot:nth-child(3){grid-column:span 2}
+.s1-shot img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;transition:transform 1.2s var(--ease),filter .6s}
+.s1-shot::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);border-radius:inherit;pointer-events:none;transition:box-shadow .4s}
+.s1-shot:hover img{transform:scale(1.06)}
+.s1-shot:hover::after{box-shadow:inset 0 0 0 2px var(--red)}
+/* reveal: black curtain slides off each photo */
+.s1-js .s1-curtain::before{content:"";position:absolute;inset:0;z-index:2;background:#000;transform-origin:right;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
+.s1-js .s1-curtain img{scale:1.15;transition:scale 1.8s var(--ease),transform 1.2s var(--ease)}
+.s1-js .s1-curtain.is-in::before{transform:scaleX(0)}
+.s1-js .s1-curtain.is-in img{scale:1}
+.s1-shots .s1-shot:nth-child(2)::before{transition-delay:.12s}.s1-shots .s1-shot:nth-child(3)::before{transition-delay:.24s}
+
 /* ───────── 3. Experience ───────── */
 .s1-exp{background:linear-gradient(180deg,#000 0%,var(--ink-2) 100%)}
 .s1-head--center{text-align:center;margin-left:auto;margin-right:auto}
@@ -340,6 +375,7 @@
 .s1-visit{overflow:hidden}
 .s1-visit__flag{position:absolute;top:0;left:0;right:0;height:24px;opacity:.9;
   background:conic-gradient(#fff 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/24px 24px}
+.s1-visit__title{font-size:clamp(42px,5.6vw,96px);white-space:nowrap}
 .s1-visit__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:stretch}
 .s1-visit__list{margin-top:36px;border-top:1px solid var(--line)}
 .s1-visit__list>div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
@@ -374,6 +410,10 @@
   .s1-stat{padding:28px 10px 32px}
   .s1-stat:nth-child(3)::before{display:none}
   .s1-cols{grid-template-columns:1fr;row-gap:44px}
+  .s1-gallery{padding:40px 0 0}
+  .s1-shots{grid-template-columns:1fr 1fr;grid-auto-rows:44vw;gap:10px}
+  .s1-shot:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .s1-shot:nth-child(2),.s1-shot:nth-child(3){grid-column:span 1}
   .s1-col{padding:0}
   .s1-col+.s1-col{border-left:0}
   .s1-events{padding:100px 0;min-height:0}
@@ -390,6 +430,8 @@
 @media (prefers-reduced-motion:reduce){
   .s1 *,.s1 *::before,.s1 *::after{animation:none!important;transition:none!important}
   .s1-js .s1-intro,.s1-js .s1-reveal{opacity:1!important;transform:none!important}
+  .s1-js .s1-curtain::before{display:none}
+  .s1-js .s1-curtain img{scale:1}
   .s1-hero__iris{display:none}
 }
 </style>
@@ -453,7 +495,7 @@
   }
 
   // Scroll reveals
-  var targets = root.querySelectorAll('.s1-reveal, [data-count]');
+  var targets = root.querySelectorAll('.s1-reveal, .s1-curtain, [data-count]');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
@@ -470,7 +512,7 @@
   }
 
   // Photos: if a URL fails, retry once with Squarespace's resized version, then show a dark panel
-  root.querySelectorAll('.s1-events__bg').forEach(function(img){
+  root.querySelectorAll('.s1-events__bg, .s1-shot img').forEach(function(img){
     img.addEventListener('error', function(){
       if (!img.dataset.retried) { img.dataset.retried = '1'; img.src = img.src.split('?')[0] + '?format=1500w'; return; }
       img.style.display = 'none';
