@@ -296,7 +296,8 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
   - Birthday parties, bachelor parties, corporate events & team building, meetings, remote work space, BYOB.
 - **Positioning:** speak to everyone, not only motorsport fans. Frame a visit as a **one-of-a-kind experience for all ages and skill levels**, for friends, families, dates and teams. Don't tie intro copy to "Paramus, NJ" in a way that sounds local-only; people travel to visit (the address belongs in the visit/contact block). Avoid jargon like "professional motorsport simulation" in headline or intro copy.
 - **Site links:**
-  - Book / daily rates: `https://www.sim1racing.com/daily-rates`
+  - **Book Now (all booking buttons):** `https://sim1racing.as.me/`
+  - Daily rates page: `https://www.sim1racing.com/daily-rates`
   - Pricing: `/pricing`
   - Group packages / events: `/group-packages`
   - Group classes: `/group-classes`
