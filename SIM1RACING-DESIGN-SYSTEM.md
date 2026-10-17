@@ -186,7 +186,7 @@ Arrow icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l
 Four columns. Huge italic numbers **count up** from 0 with an ease-out over 1.6s when scrolled into view. A 36×4px slanted red bar sits above each label, and there are faint vertical dividers between columns. Mobile: 2×2.
 
 ### Three themed columns (used for "More than just racing")
-Three columns separated by hairlines. Each has an outlined red number (01/02/03) plus a big italic uppercase title on one line, a 3px red underline, then a list of items: a bold condensed uppercase title (22–30px) with a one-line muted description. Hover: the title turns red and nudges 6px right. Optional small links under an item (`View events →`): white, 800 weight, 16px, with a 2px red underline that turns red on hover. The columns fade up one after another (0.12s stagger).
+Three columns separated by hairlines. Each has an outlined red number (01/02/03) plus a big italic uppercase title on one line, a 3px red underline, then a list of items: a bold condensed uppercase title (22–30px) with a one-line muted description. Hover: the title turns red and nudges 6px right. **On phones show titles only** (no descriptions or item links), as quick-scan tiles with a red left bar, two per row; desktop keeps the descriptions. Optional small links under an item (`View events →`): white, 800 weight, 16px, with a 2px red underline that turns red on hover. The columns fade up one after another (0.12s stagger).
 
 ### Photo gallery
 A grid with one large photo on the left (spans two rows, ~0.88:1) and two wide photos stacked on the right (**2.5:1**). 16px gaps, 12px radius. Each photo reveals with a **black curtain** sliding off (staggered), its image settling from `scale:1.15` to 1. Hover: 1.06 zoom plus a red 2px inner outline.
@@ -303,7 +303,7 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
 
 - **Name:** SIM1Racing. **Tagline:** The Largest Sim-Racing Center in America.
 - **Address:** 145 Route 4, Paramus, NJ 07652. Directions link: `https://www.google.com/maps/dir/?api=1&destination=145+Route+4+Paramus+NJ+07652`
-- **Hours:** open 7 days a week, 11AM–11PM. Walk-ins welcome.
+- **Hours:** open 7 days a week, 11AM–11PM (write "7 days a week", not "walk-ins welcome daily"). Walk-ins welcome.
 - **Phone:** (201) 988-1329 → `tel:201-988-1329`
 - **Email:** info@sim1racing.com → `mailto:info@sim1racing.com` (add `?subject=…` where helpful)
 - **Facility:** 20 full-motion simulators · 8,000 sq ft · 230" main screen · 250+ parking spaces · BYOB · high-speed WiFi / remote work space

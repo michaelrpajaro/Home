@@ -177,7 +177,7 @@
         <p class="s1-eyebrow s1-reveal">Visit Us</p>
         <h2 class="s1-h2 s1-visit__title s1-reveal">Come see it<br><span class="s1-red">for yourself</span></h2>
         <dl class="s1-visit__list s1-reveal">
-          <div><dt>Hours</dt><dd>Walk-ins welcome daily<br>11AM – 11PM</dd></div>
+          <div><dt>Hours</dt><dd>7 days a week<br>11AM – 11PM</dd></div>
           <div><dt>Address</dt><dd><a href="https://www.google.com/maps/dir/?api=1&destination=145+Route+4+Paramus+NJ+07652" target="_blank" rel="noopener">145 Route 4<br>Paramus, NJ 07652</a></dd></div>
           <div><dt>Phone</dt><dd><a href="tel:201-988-1329">(201) 988-1329</a></dd></div>
         </dl>
@@ -462,8 +462,10 @@
   .s1-col__head h3{font-size:22px}
   .s1-col ul{display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
   .s1-col li{padding:8px 0;border-bottom:0}
-  .s1-col h4{font-size:15px;line-height:1.1}
-  .s1-col p{font-size:12px;line-height:1.38;margin-top:3px}
+  .s1-col h4{font-size:16px;line-height:1.1}
+  .s1-col p,.s1-col__links{display:none}
+  .s1-col ul{row-gap:8px;margin-top:10px}
+  .s1-col li:not(.s1-col__cta){padding:12px 10px 12px 12px;border-left:3px solid var(--red);background:rgba(255,255,255,.05);border-radius:0 6px 6px 0;display:flex;align-items:center}
   .s1-col__links{gap:4px 10px;margin-top:5px}
   .s1-col__links a{font-size:11px;letter-spacing:.06em;border-bottom-width:1.5px}
   .s1-col__cta{display:flex;align-items:center}
@@ -494,6 +496,30 @@
   .s1-sticky .s1-btn{flex:1}
   .s1-sticky__call{width:52px;height:50px;display:grid;place-items:center;border-radius:6px;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:20px}
 }
+/* ───────── Desktop: wider experience columns, bigger events + visit text ───────── */
+@media (min-width:1025px){
+  .s1-exp .s1-wrap--wide{max-width:2240px}
+  .s1-col{padding:0 clamp(40px,calc(4.2 * var(--vwu,1vw)),110px)}
+  .s1-events .s1-wrap{max-width:2100px}
+  .s1-events .s1-eyebrow{font-size:clamp(17px,calc(.95 * var(--vwu,1vw)),24px)}
+  .s1-events .s1-h2--xl{font-size:clamp(50px,calc(6.9 * var(--vwu,1vw)),176px)}
+  .s1-events .s1-lead{font-size:clamp(19px,calc(1.2 * var(--vwu,1vw)),31px);max-width:1080px;margin-top:32px}
+  .s1-events__types{grid-template-columns:repeat(3,minmax(0,420px));gap:22px;margin-top:52px}
+  .s1-events__types div{padding:30px 34px}
+  .s1-events__types strong{font-size:34px}
+  .s1-events__types span{font-size:23px;margin-top:8px}
+  .s1-events .s1-ctas{margin-top:48px;gap:18px}
+  .s1-events .s1-ctas .s1-btn{font-size:27px;padding:27px 58px}
+  .s1-visit__grid{grid-template-columns:max-content minmax(0,calc(78 * var(--vhu,1vh)))}
+  .s1-visit__title{font-size:clamp(42px,calc(5.2 * var(--vwu,1vw)),132px)}
+  .s1-visit__list{margin-top:44px}
+  .s1-visit__list>div{grid-template-columns:180px 1fr;gap:28px;padding:26px 0}
+  .s1-visit__list dt{font-size:24px}
+  .s1-visit__list dd{font-size:27px}
+  .s1-visit__info>.s1-ctas{margin-top:44px;gap:16px}
+  .s1-visit__info .s1-btn{font-size:23px;padding:22px 40px}
+}
+
 @media (prefers-reduced-motion:reduce){
   .s1 *,.s1 *::before,.s1 *::after{animation:none!important;transition:none!important}
   .s1-js .s1-intro,.s1-js .s1-reveal{opacity:1!important;transform:none!important}
