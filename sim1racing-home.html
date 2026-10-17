@@ -449,13 +449,16 @@
   /* headline sizes itself so "SIM-RACING CENTER" fills the width on one line */
   .s1-hero__title{font-size:calc((calc(100 * var(--vwu,1vw)) - 24px) / 8.1);font-size:calc((100cqi - 24px) / 8.1);margin-left:-6px;margin-right:-6px}
   .s1-line{white-space:nowrap;padding-left:.05em;padding-right:.05em}
-  .s1-statband{padding:80px 0 40px}
-  .s1-stats{grid-template-columns:repeat(2,1fr);row-gap:8px}
-  .s1-stat{padding:28px 10px 32px}
+  .s1-statband{padding:14px 0 0}
+  .s1-stats{grid-template-columns:repeat(2,1fr);row-gap:0}
+  .s1-stat{padding:10px 6px 12px}
+  .s1-stat strong{font-size:52px}
+  .s1-stat em{font-size:13px;letter-spacing:.14em;margin-top:8px}
+  .s1-stat em::before{width:28px;height:3px;margin-bottom:8px}
   .s1-stat:nth-child(3)::before{display:none}
   .s1-cols{grid-template-columns:1fr;row-gap:44px}
-  .s1-gallery{padding:40px 0 0}
-  .s1-shots{grid-template-columns:1fr 1fr;grid-auto-rows:calc(44 * var(--vwu,1vw));gap:10px}
+  .s1-gallery{padding:10px 0 0}
+  .s1-shots{grid-template-columns:1fr 1fr;grid-auto-rows:calc(37 * var(--vwu,1vw));gap:8px}
   .s1-shot:nth-child(1){grid-column:span 2;grid-row:span 1}
   .s1-shot:nth-child(2),.s1-shot:nth-child(3){grid-column:span 1}
   .s1-col{padding:0}
@@ -519,7 +522,9 @@
   var cue = root.querySelector('.s1-scroll');
   if (cue) cue.addEventListener('click', function(e){
     e.preventDefault();
-    document.getElementById('s1-explore').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+    // phones: land on the stats + photos (they fit on one screen); desktop: the experience section
+    var target = window.innerWidth <= 768 ? root.querySelector('.s1-statband') : document.getElementById('s1-explore');
+    target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
   });
 
   // Count-up numbers
