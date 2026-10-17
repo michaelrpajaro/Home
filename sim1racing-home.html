@@ -458,9 +458,10 @@
   .s1-stat:nth-child(3)::before{display:none}
   .s1-cols{grid-template-columns:1fr;row-gap:44px}
   .s1-gallery{padding:10px 0 0}
-  .s1-shots{grid-template-columns:1fr 1fr;grid-auto-rows:calc(37 * var(--vwu,1vw));gap:8px}
-  .s1-shot:nth-child(1){grid-column:span 2;grid-row:span 1}
-  .s1-shot:nth-child(2),.s1-shot:nth-child(3){grid-column:span 1}
+  /* same shapes as desktop: tall photo left (~0.88:1), two 2.5:1 photos stacked right */
+  .s1-shots{grid-template-columns:0.74fr 1fr;grid-auto-rows:auto;gap:8px}
+  .s1-shot:nth-child(1){grid-column:1;grid-row:1 / span 2}
+  .s1-shot:nth-child(2),.s1-shot:nth-child(3){grid-column:2;aspect-ratio:2.5/1}
   .s1-col{padding:0}
   .s1-col+.s1-col{border-left:0}
   .s1-events{padding:100px 0;min-height:0}
