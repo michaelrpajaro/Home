@@ -62,6 +62,8 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
    - Add `zoom:var(--z,1);` to the `.s1` rule.
    - **Never write raw `vw`/`vh`/`svh` units.** Inside a zoomed element they come out the wrong size. Write `calc(N * var(--vwu,1vw))` and `calc(N * var(--vhu,1vh))` instead. Container units (`cqi`) and `px` are fine.
    - Media queries still use the real screen width (1024px / 768px breakpoints are unaffected).
+9. **Edge to edge on phones/tablets.** Squarespace adds side margins around blocks on mobile, which shows up as thin borders on the left and right. Inside `@media (max-width:1024px)` add:
+   `.s1{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}`
 
 ---
 
