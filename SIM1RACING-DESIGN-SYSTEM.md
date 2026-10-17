@@ -197,13 +197,10 @@ Small dark glass panels: `rgba(0,0,0,.45)`, blur, a 3px red left border, a conde
 A background photo with a left-to-right black gradient for legibility, a slow parallax as the page scrolls, and an XL two-line heading (red italic second line), lead paragraph, cards and two buttons.
 
 ### Visit / contact block
-Full-width three-column layout (no max width, side padding `clamp(20px,1.6vw,32px)`, generous column gaps `clamp(40px,4.2vw,88px)`):
-- **Left (`max-content`, items offset with `margin-left:clamp(0px,2.4vw,48px)`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (bold white 18px keys Hours / Address / Phone; values as underlined links that turn red on hover), and two buttons kept on one row (padding 18×28px).
-- **Middle (`minmax(220px,1fr)`):** a grayscale-inverted Google Map embed. It takes whatever width is left after the photo and always matches the photo's height (a script sets `--exth`).
-- **Right (`minmax(0, calc(var(--boxh) * var(--ext-ratio)))`):** an exterior photo whose box **takes the photo's own shape, so it is never cropped**. A small script sets `--ext-ratio` from the image's natural width/height and `--boxh` to the distance from the heading top to the buttons bottom (measured with `offsetTop`, which isn't thrown off by the reveal animations, and kept updated with ResizeObserver). The map takes whatever width is left. If the screen is too narrow for the photo at full text height, the photo shrinks while keeping its exact shape (top still aligned to the heading) rather than being cropped. Animation: curtain reveal ending at the full uncropped frame, plus a slight brightness lift and red outline on hover. **No Ken Burns zoom here**, because it trims the edges.
-- **Alignment rule:** the map and photo run from the **top of the heading** to the **bottom of the buttons**. Do this with `.s1-visit__info{display:contents}` and grid rows: eyebrow row 1, heading row 2, list row 3, buttons row 4; map and photo `grid-row:2/5`.
-- **Current photo:** `images/exterior.jpg` (1280×720, 16:9; building front with an Audi R8 and McLaren). At 16:9 the photo reaches the full text height from about 1920px wide. On 1366–1600px screens it is shorter (about 350–440px tall) so it stays uncropped. **Never crop this photo**: the owner wants the whole image visible.
-- A checkered-flag strip runs along the top edge. Below 1024px everything stacks (map 1:1, photo at its own shape).
+Two columns, **centered as a group** (`justify-content:center`): the info on the left and the map on the right. No photo.
+- **Left (`max-content`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (bold white 18px keys Hours / Address / Phone; values are underlined links that turn red on hover), and two buttons kept on one row.
+- **Right (`minmax(0, 60vh)` via `--vhu`):** a grayscale-inverted Google Map embed that runs from the **top of the heading** to the **bottom of the buttons**. Use `.s1-visit__info{display:contents}` with grid rows (eyebrow row 1, heading row 2, list row 3, buttons row 4) and put the map at `grid-row:2/5`.
+- A checkered-flag strip runs along the top edge. Below 1024px it stacks, with the map square.
 
 ### Mobile sticky bar (phones only)
 Appears after scrolling past the hero: a frosted dark bar pinned to the bottom with a phone-icon button and a full-width red Book Now button.
@@ -333,6 +330,6 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
   - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@2cdde9d455db1f8d0ba405f6ca76d95876310a08/images/front-desk.jpg` (front desk + race car + main screen)
   - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@527b21516be3555be45e47e11ebaf56bade7dbb7/images/sim-rigs.jpg` (row of simulators in use)
   - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@1cc9949bcb7db1cc84f7679e3f28f82867fc02fb/images/car-meet.jpg` (indoor car meet, 2.5:1; homepage gallery bottom-right)
-  - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@f6c504c9b6163a7ae40ca85c5eea69a9a072c7c4/images/exterior.jpg` (outside of the building with cars, 16:9)
+  - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@f6c504c9b6163a7ae40ca85c5eea69a9a072c7c4/images/exterior.jpg` (outside of the building with cars, 16:9; not currently used on the homepage)
 
 **Reference implementation:** the full homepage code is `sim1racing-home.html` in the GitHub repo `michaelrpajaro/Home`. If you can read it, treat it as the source of truth for exact values.

@@ -191,12 +191,6 @@
           src="https://maps.google.com/maps?q=145%20Route%204%2C%20Paramus%2C%20NJ%2007652&z=15&output=embed"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <!-- PHOTO: outside of the building. The box takes this photo's exact shape, so nothing is cropped.
-           Best: square 2000 x 2000 or slightly portrait (up to 2000 x 2500).
-           The map narrows to make room for it. -->
-      <figure class="s1-exterior s1-curtain">
-        <img src="https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@f6c504c9b6163a7ae40ca85c5eea69a9a072c7c4/images/exterior.jpg" alt="Outside SIM1Racing at 145 Route 4, Paramus NJ, with an Audi R8 and McLaren parked in front" loading="lazy">
-      </figure>
     </div>
   </section>
 
@@ -396,23 +390,16 @@
   background:conic-gradient(#fff 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/24px 24px}
 .s1-visit__title{font-size:clamp(42px,calc(4.4 * var(--vwu,1vw)),84px);white-space:nowrap}
 .s1-visit .s1-wrap--wide{max-width:none;padding-left:clamp(20px,calc(1.6 * var(--vwu,1vw)),32px);padding-right:clamp(20px,calc(1.6 * var(--vwu,1vw)),32px)}
-.s1-visit__grid{--boxh:520px;--ext-ratio:1.7778;display:grid;grid-template-columns:max-content minmax(220px,1fr) minmax(0,calc(var(--boxh) * var(--ext-ratio)));column-gap:clamp(40px,calc(4.2 * var(--vwu,1vw)),88px);row-gap:0;align-items:stretch}
+.s1-visit__grid{display:grid;grid-template-columns:max-content minmax(0,calc(60 * var(--vhu,1vh)));justify-content:center;column-gap:clamp(48px,calc(5 * var(--vwu,1vw)),110px);row-gap:0;align-items:stretch}
 /* map + photo run from the top of the heading to the bottom of the buttons */
 .s1-visit__info{display:contents}
-.s1-visit__info>*{margin-left:clamp(0px,calc(2.4 * var(--vwu,1vw)),48px)}
 .s1-visit__info>.s1-eyebrow{grid-column:1;grid-row:1}
 .s1-visit__info>.s1-visit__title{grid-column:1;grid-row:2}
 .s1-visit__info>.s1-visit__list{grid-column:1;grid-row:3}
 .s1-visit__info>.s1-ctas{grid-column:1;grid-row:4}
 .s1-visit__info>.s1-ctas{flex-wrap:nowrap;gap:12px}
 .s1-visit__info .s1-btn{padding:18px 28px}
-.s1-visit__grid>.s1-visit__map{grid-column:2;grid-row:2/5;align-self:start;height:var(--exth,100%)}
-.s1-visit__grid>.s1-exterior{grid-column:3;grid-row:2/5;align-self:start;width:100%;aspect-ratio:var(--ext-ratio)}
-.s1-exterior{position:relative;margin:0;border-radius:12px;overflow:hidden;background:var(--ink-3)}
-.s1-exterior img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;transition:filter .5s}
-.s1-exterior::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);transition:box-shadow .4s}
-.s1-exterior:hover::after{box-shadow:inset 0 0 0 2px var(--red)}
-.s1-exterior:hover img{filter:brightness(1.08)}
+.s1-visit__grid>.s1-visit__map{grid-column:2;grid-row:2/5}
 .s1-visit__list{margin-top:36px;border-top:1px solid var(--line)}
 .s1-visit__list>div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
 .s1-visit__list dt{font-family:var(--cond);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-size:18px;padding-top:1px}
@@ -430,11 +417,9 @@
   /* phones/tablets: break out of Squarespace's side margins so the page runs edge to edge */
   .s1{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
   .s1-visit__grid{grid-template-columns:1fr;gap:0}
-  .s1-visit__info>*{margin-left:0}
-  .s1-visit__info>*,.s1-visit__grid>.s1-visit__map,.s1-visit__grid>.s1-exterior{grid-column:1;grid-row:auto}
+  .s1-visit__info>*,.s1-visit__grid>.s1-visit__map{grid-column:1;grid-row:auto}
   .s1-visit__grid>.s1-visit__map{aspect-ratio:1/1;height:auto;margin-top:48px}
-  .s1-visit__grid>.s1-exterior{aspect-ratio:var(--ext-ratio);margin-top:16px}
-  .s1-events__types{grid-template-columns:1fr;max-width:460px}
+    .s1-events__types{grid-template-columns:1fr;max-width:460px}
 }
 @media (max-width:768px){
   .s1{font-size:16px}
@@ -578,24 +563,6 @@
   } else {
     targets.forEach(function(el){ el.classList.add('is-in'); });
   }
-
-  // Visit section: the exterior photo box takes the photo's exact shape (never cropped).
-  // Its height runs from the top of the heading to the bottom of the buttons.
-  (function(){
-    var grid = root.querySelector('.s1-visit__grid'), title = root.querySelector('.s1-visit__title'),
-        ctas = root.querySelector('.s1-visit__info > .s1-ctas'), img = root.querySelector('.s1-exterior img');
-    if (!grid || !title || !ctas || !img) return;
-    function ratio(){ if (img.naturalWidth) grid.style.setProperty('--ext-ratio', (img.naturalWidth / img.naturalHeight).toFixed(4)); }
-    function height(){ var h = (ctas.offsetTop + ctas.offsetHeight) - title.offsetTop; if (h > 0) grid.style.setProperty('--boxh', h + 'px'); }
-    if (img.complete) ratio();
-    img.addEventListener('load', ratio);
-    var fig = img.parentNode;
-    function sync(){ height(); grid.style.setProperty('--exth', fig.offsetHeight + 'px'); }
-    img.addEventListener('load', function(){ requestAnimationFrame(sync); });
-    sync();
-    if ('ResizeObserver' in window) { var ro = new ResizeObserver(function(){ requestAnimationFrame(sync); }); ro.observe(grid); ro.observe(fig); }
-    else window.addEventListener('resize', sync);
-  })();
 
   // Photos: if a URL fails, retry once with Squarespace's resized version, then show a dark panel
   root.querySelectorAll('.s1-events__bg, .s1-shot img').forEach(function(img){
