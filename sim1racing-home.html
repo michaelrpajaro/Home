@@ -471,7 +471,7 @@
   .s1-col__cta{display:flex;align-items:center}
   .s1-col__cta a{font-size:13px;gap:6px}
   .s1-exp .s1-ctas{margin-top:16px}
-  .s1-exp .s1-ctas .s1-btn{flex:none;width:66%;height:50px;padding:0 12px;margin:0 auto;font-size:16px}
+  .s1-exp .s1-ctas{display:none}
   .s1-events{padding:26px 0 36px;min-height:0}
   .s1-events .s1-eyebrow{font-size:14px;margin-bottom:10px}
   .s1-events .s1-h2--xl{font-size:clamp(34px,10.5vw,46px)}
@@ -498,6 +498,13 @@
 }
 /* ───────── Desktop: wider experience columns, bigger events + visit text ───────── */
 @media (min-width:1025px){
+  .s1-sticky{display:flex;position:fixed;top:28px;right:32px;z-index:999;align-items:center;gap:12px;padding:10px;
+    background:rgba(12,12,14,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 20px 40px rgba(0,0,0,.5);opacity:0;pointer-events:none;transform:translateY(-140%);transition:transform .45s var(--ease),opacity .3s}
+  .s1-sticky.is-on{opacity:1;pointer-events:auto;transform:none}
+  .s1-sticky .s1-btn{padding:18px 40px;font-size:21px}
+  .s1-sticky__call{width:62px;height:60px;display:grid;place-items:center;border-radius:8px;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:24px;transition:background .3s,color .3s,border-color .3s}
+  .s1-sticky__call:hover{background:#fff;color:#000;border-color:#fff}
   .s1-exp .s1-wrap--wide{max-width:2240px}
   .s1-col{padding:0 clamp(40px,calc(4.2 * var(--vwu,1vw)),110px)}
   .s1-events .s1-wrap{max-width:2100px}
@@ -623,7 +630,8 @@
     var vh = window.innerHeight, rb = root.getBoundingClientRect();
     // hide the sticky bar once the Visit section (which has its own Book/Call buttons) is on screen
     var visit = root.querySelector('.s1-visit');
-    if (sticky) sticky.classList.toggle('is-on', hero.getBoundingClientRect().bottom < 0 && rb.bottom > vh && (!visit || visit.getBoundingClientRect().top > vh * 0.6));
+    var stats = root.querySelector('.s1-statband');
+    if (sticky) sticky.classList.toggle('is-on', (stats ? stats.getBoundingClientRect().top < vh * 0.5 : hero.getBoundingClientRect().bottom < 0) && rb.bottom > vh && (!visit || visit.getBoundingClientRect().top > vh * 0.6));
     if (reduce) return;
     para.forEach(function(img){
       var b = img.parentNode.getBoundingClientRect();

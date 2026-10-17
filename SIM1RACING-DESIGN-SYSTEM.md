@@ -204,8 +204,12 @@ Two columns, **centered as a group** (`justify-content:center`): the info on the
 - **Right (`minmax(0, 60vh)` via `--vhu`):** a grayscale-inverted Google Map embed that runs from the **top of the heading** to the **bottom of the buttons**. Use `.s1-visit__info{display:contents}` with grid rows (eyebrow row 1, heading row 2, list row 3, buttons row 4) and put the map at `grid-row:2/5`.
 - A checkered-flag strip runs along the top edge. Below 1024px it stacks, with the map square.
 
-### Mobile sticky bar (phones only)
-Appears after scrolling past the hero: a frosted dark bar pinned to the bottom with a phone-icon button and a full-width red Book Now button.
+### Floating Book bar (phones and desktop)
+A frosted dark pill with a phone-icon button and a red Book Now button.
+- **Phones:** pinned to the bottom, full width.
+- **Desktop:** pinned to the **top right** (`top:28px; right:32px`), compact, and slides down into view.
+- **When it shows:** once the stats band reaches the middle of the screen (the moment the 4 stats and 3 photos come into view). It hides again when the Visit section is on screen, since that section has its own Book and Call buttons.
+- Because the floating bar is always available, **don't repeat a Book Now button directly under sections on phones** (the experience section's button is hidden on mobile).
 
 ---
 
