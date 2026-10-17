@@ -110,6 +110,8 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 | **Big numbers** | Barlow Condensed 900 *italic*, up to 150px, white; units like `"` or `+` in red at 50% size. |
 | **Outlined numbers** (01, 02…) | Barlow Condensed 900 italic, transparent fill, `-webkit-text-stroke:1.5px var(--red)`. |
 
+**Black outline on all titles.** Every section heading (`.s1-h2`, including XL) and every group title (01/02/03 column headers) gets the same black outline as the hero headline: `-webkit-text-stroke:max(4px,.06em) #000; paint-order:stroke fill;`. Half the stroke sits behind the letters, so they keep their weight.
+
 **Readability rule: never use red for small text.** Thin, small red text on black is hard to read, and the owner flagged it. Red is only for large headline words, buttons, bars, underlines, outlined numbers and big stat accents. Any text under about 24px (eyebrows, labels, list keys, small links) is **white or light gray, weight 800**, with red only as an accent shape (a bar before it or an underline beneath it).
 
 **No periods at the end of headings.** The owner dislikes the "Title." style. Write "Come see it for yourself", not "Come see it for yourself." The same goes for eyebrows, column titles and button labels.
