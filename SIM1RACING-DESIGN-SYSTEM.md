@@ -332,6 +332,7 @@ Appears after scrolling past the hero: a frosted dark bar pinned to the bottom w
   - `https://static1.squarespace.com/static/675f613ae652273e9723cfd3/t/69c5da63a814f34287109d52/1774574183404/CTA06863.jpg`
   - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@2cdde9d455db1f8d0ba405f6ca76d95876310a08/images/front-desk.jpg` (front desk + race car + main screen)
   - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@527b21516be3555be45e47e11ebaf56bade7dbb7/images/sim-rigs.jpg` (row of simulators in use)
+  - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@1cc9949bcb7db1cc84f7679e3f28f82867fc02fb/images/car-meet.jpg` (indoor car meet, 2.5:1; homepage gallery bottom-right)
   - `https://cdn.jsdelivr.net/gh/michaelrpajaro/Home@f6c504c9b6163a7ae40ca85c5eea69a9a072c7c4/images/exterior.jpg` (outside of the building with cars, 16:9)
 
 **Reference implementation:** the full homepage code is `sim1racing-home.html` in the GitHub repo `michaelrpajaro/Home`. If you can read it, treat it as the source of truth for exact values.
