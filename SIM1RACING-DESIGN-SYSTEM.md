@@ -1,6 +1,6 @@
 # SIM1Racing Website: Design System & Build Guide
 
-> **How to use this document:** paste all of it into a new Claude chat, then describe the page you want built or redesigned (and paste that page's current code blocks if it has any). Everything Claude needs to match the homepage's look, animations and technical setup is below.
+> **How to use this document:** paste all of it into a new Claude chat, then describe the page you want built or redesigned (and paste that page's current code blocks if it has any). Everything Claude needs to match the homepage's look, animations and technical setup is below, along with how to give each new page its own personality while staying on-brand (section 0.5).
 
 ---
 
@@ -14,11 +14,40 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 - **No external build tools, frameworks or libraries.** Use plain HTML, CSS and vanilla JavaScript only.
 
 **Working preferences of the site owner (follow these):**
-- The owner designs and reviews on **desktop first**. Don't change the mobile layout unless they explicitly say they are reviewing mobile, but keep mobile working and responsive.
+- The owner designs and reviews on **desktop first**, then switches to mobile. They will say which one they are reviewing ("for mobile…", "going back to desktop…"). Apply each change **only to the version they named**, and leave the other version exactly as it is. A few changes (copy, links, photos) naturally apply to both; say so when that happens. Keep both versions working and responsive at all times.
 - Make only the changes they ask for. If something they ask for would break or look bad, say so and suggest the closest good alternative.
 - Never invent facts, reviews, prices or claims. Use only facts the owner gives you or that are listed in section 9.
 - Keep copy punchy and avoid repeating the same word across nearby headings. The word "racing" is easy to overuse.
 - Explain what changed in plain language, without jargon.
+
+---
+
+## 0.5 Same style, unique pages (read this before designing)
+
+The homepage defines the **design language**, not a template to copy. Every page should feel instantly like SIM1Racing, and also like its own thing. A visitor clicking from the homepage to another page should never feel they are looking at the homepage again with different words.
+
+**Keep identical on every page (the brand "DNA"):**
+- Colors and tokens (section 2), the two fonts, and the type styles (section 3): condensed 900 uppercase headings with a red phrase, the black title outline, eyebrows with the slanted red bar, no trailing periods, no small red text.
+- Buttons (red primary with shine, ghost secondary), the floating Book bar, link styles.
+- The animation vocabulary and house rules (section 6): the same easing, scroll reveals, curtains on photos, count-ups for numbers, reduced-motion support.
+- The technical rules (section 1): scoping, one code block, desktop scaling, mobile edge-to-edge.
+- Dark backgrounds, generous spacing, full use of the desktop width.
+
+**Make different on every page:**
+- **The hero.** Don't reuse the homepage's full-screen video plus the "Largest Sim-Racing Center" headline. Give each page its own opener that fits its purpose, for example: a split hero (headline on one side, a big photo on the other); a shorter banner with a photo and a giant outlined page title; a hero built around a key number or price; or a headline that types or slides in word by word. Keep the hero shorter on inner pages, around 60–75% of the screen height, so the content starts sooner.
+- **The section layouts.** Don't stack the homepage's sections in the same order (stats band → 3-photo gallery → three themed columns → photo band → visit block). Build layouts around the page's content: rate cards, a timeline, a step-by-step flow, an FAQ accordion, a comparison table, a calendar list, a photo mosaic, a tabbed panel, alternating image/text rows.
+- **One signature moment per page.** Each page gets one memorable, on-brand interaction or animation that the homepage doesn't have. It must still follow the house rules (purposeful, `transform`/`opacity` only, reduced-motion safe). Ideas:
+  - A lap-timer or countdown style number that ticks into place.
+  - A checkered-flag wipe that transitions between sections.
+  - Cards that flip or tilt slightly toward the cursor on hover.
+  - A red "racing line" that draws itself along a timeline or a set of steps as you scroll.
+  - Tabs or a toggle with a red indicator that slides between options.
+  - A horizontal, swipeable strip of cards or photos.
+  - Numbers on a pricing or package card that roll up when it comes into view.
+- **Headings and copy.** Write new headings for each page. Never reuse the homepage's headings (section 7), and vary the rhythm: not every heading needs the "white line + red italic line" pattern.
+- **Accent details.** Rotate the decorative touches so they don't all appear everywhere: speed streaks, the checkered strip, outlined giant numbers, red underline bars, faint oversized background words. Use one or two per page, not all of them.
+
+**Rule of thumb:** if you covered up the logo and text, someone should still recognize the page as SIM1Racing from the colors, type and motion, but should not be able to mistake it for the homepage.
 
 ---
 
@@ -126,10 +155,23 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 - **Dividers:** 1px `var(--line)` hairlines; red 3px bars for emphasis under column titles.
 - **Breakpoints:** `max-width:1024px` (tablet: stack two-column layouts) and `max-width:768px` (phone). Desktop-only rules use `min-width:1025px`.
 - **Desktop hero must fit one screen:** hours, headline, subtitle and buttons visible at 1366×657 and up. Hide the "Explore" scroll cue on screens shorter than 960px.
+- **Desktop sizes are set at the 2560px reference** (see section 1, item 8), and smaller laptops scale down automatically. When a desktop section has a lot of empty space, **make the text bigger and the content wider** rather than leaving it small. On the homepage, desktop-only overrides go in `@media (min-width:1025px)`. Examples: experience columns up to 2240px wide with ~110px column padding; Private Events heading up to 176px, lead paragraph 31px, cards 34px/23px, buttons 27px; visit heading up to 132px with 24px/27px list text.
+
+### Mobile patterns (phones, ≤768px)
+The owner reviews the phone version carefully. Aim for **each section to fit about one phone screen** (roughly 580px of usable height on a 390px iPhone once the browser bars and the floating Book bar are accounted for). A short scroll is fine when a section has a lot of content.
+- **Hero:** the hours line stays on **one line** (font around `clamp(13px,4.3vw,20px)`); the headline keeps each line on one row, sized to the screen width; the hero buttons are **66% width, centered, stacked, same height** (60px).
+- **Section buttons on phones:** 66% width, centered, about 46–50px tall, 15–16px text. Never full-width blocks.
+- **Simplify text on phones:** where desktop shows short descriptions, phones can show **titles only** as tappable-looking tiles (dark panel, 3px red left bar, two per row). Desktop keeps the descriptions.
+- **Keep photo shapes the same as desktop** so they crop the same way (e.g. the gallery stays tall-left + two 2.5:1 tiles on the right, just smaller).
+- **Spacing:** about 46–72px above each section header and a comfortable gap between stacked blocks. Tighten paddings and font sizes until a section fits one screen, but never shrink body text below about 12px.
+- **Don't duplicate the floating Book bar:** no extra Book Now buttons directly under sections on phones.
+- Test at **360, 390 and 430px** wide and check nothing sits under the floating bar.
 
 ---
 
-## 5. Components (copy these patterns)
+## 5. Components (building blocks: reuse the styling, adapt the layout)
+
+These are the homepage's components. Reuse their **styling and behavior** freely (buttons, eyebrows, cards, curtains, count-ups). For larger sections, adapt the layout to the new page's content instead of cloning the homepage arrangement (see section 0.5). The base CSS, buttons and floating Book bar should appear on every page unchanged.
 
 ### Base CSS (always include)
 ```css
@@ -166,7 +208,7 @@ You are designing pages for **SIM1Racing** (sim1racing.com), the largest sim-rac
 ```
 Arrow icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`
 
-### Hero (homepage pattern; reuse a shorter version for inner-page banners)
+### Hero (homepage only; inner pages need their own opener, see section 0.5)
 - Full-screen video or photo background, an `opacity:.8` dimmer, and a gradient overlay that fades to black at the bottom.
 - **Red speed streaks:** six thin 2px red-gradient lines shoot left→right across the hero on a loop (`transform` + `opacity` only).
 - **Opening iris:** a black radial vignette over the media scales up from the center and fades out over 2.6s on load, then is **removed from the page** (`animationend` → `remove()`).
@@ -199,6 +241,8 @@ Small dark glass panels: `rgba(0,0,0,.45)`, blur, a 3px red left border, a conde
 A background photo with a left-to-right black gradient for legibility, a slow parallax as the page scrolls, and an XL two-line heading (red italic second line), lead paragraph, cards and two buttons.
 
 ### Visit / contact block
+A good closing section for any page (hours, address, phone, map). On other pages you can vary its look (e.g. map full-width with an info card over it) as long as the details and buttons stay the same.
+
 Two columns, **centered as a group** (`justify-content:center`): the info on the left and the map on the right. No photo.
 - **Left (`max-content`):** eyebrow, heading `clamp(42px,4.4vw,84px)` that never wraps, a definition list (bold white 18px keys Hours / Address / Phone; values are underlined links that turn red on hover), and two buttons kept on one row.
 - **Right (`minmax(0, 60vh)` via `--vhu`):** a grayscale-inverted Google Map embed that runs from the **top of the heading** to the **bottom of the buttons**. Use `.s1-visit__info{display:contents}` with grid rows (eyebrow row 1, heading row 2, list row 3, buttons row 4) and put the map at `grid-row:2/5`.
@@ -226,7 +270,7 @@ A frosted dark pill with a phone-icon button and a red Book Now button.
 | **Speed streaks** | Hero | 6 × `<i>` lines, `@keyframes` translateX(0→620%) with opacity in/out, 3.2s linear infinite, staggered delays. |
 | **Iris open** | Hero load | Radial-gradient layer scales 1→5 and fades over 2.6s, then is removed. |
 | **Button shine** | Primary buttons | White gradient sweep across every 4s. |
-| **Ken Burns** | Feature photos | 24s ease-in-out infinite alternate, `scale(1)→scale(1.08) translate(-1.5%,-1%)`. |
+| **Ken Burns** (optional) | Feature photos | 24s ease-in-out infinite alternate, `scale(1)→scale(1.08) translate(-1.5%,-1%)`. **Don't use it on photos the owner wants shown uncropped** (it trims the edges). Not currently used on the homepage. |
 | **Parallax** | Full-bleed backgrounds | On scroll (rAF-throttled), translateY by `(distance from viewport center) × -0.08`. |
 | **Hover** | Interactive items | Lift 3px (buttons), zoom 1.05–1.06 (photos), a red text shift (list items), a red outline (photos). |
 
@@ -300,6 +344,9 @@ A frosted dark pill with a phone-icon button and a red Book Now button.
 - [ ] No sideways scrolling on any width. Mobile is still usable even if not the focus.
 - [ ] All links are real (section 9). `mailto:` and `tel:` links work.
 - [ ] No invented facts, reviews or prices.
+- [ ] The page has its **own hero, its own section layouts and one signature moment** (section 0.5), and doesn't reuse the homepage's section order or headings.
+- [ ] Phone: each section fits about one screen (or a short scroll), buttons are 66% width, nothing hides under the floating Book bar, tested at 360/390/430px.
+- [ ] Desktop: text fills the available space; checked at 2560×1271 (owner's Windows laptop) and 1728×1000 (owner's MacBook).
 
 ---
 
